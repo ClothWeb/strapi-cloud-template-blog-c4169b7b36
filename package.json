@@ -1,10 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "strapi-wonder-sim",
+=======
+  "name": "my-app-name",
+>>>>>>> 30babb328c3c1e6dd26548c3771b3651c8093e14
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
+<<<<<<< HEAD
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "strapi develop",
@@ -19,11 +24,27 @@
     "@strapi/plugin-users-permissions": "5.13.0",
     "@strapi/strapi": "5.13.0",
     "better-sqlite3": "11.3.0",
+=======
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.11.0",
+    "@strapi/plugin-users-permissions": "5.11.0",
+    "@strapi/strapi": "5.11.0",
+    "better-sqlite3": "11.3.0",
+    "fs-extra": "^10.0.0",
+    "mime-types": "^2.1.27",
+>>>>>>> 30babb328c3c1e6dd26548c3771b3651c8093e14
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
+<<<<<<< HEAD
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
@@ -37,5 +58,11 @@
   "strapi": {
     "uuid": "df9ffc97-571a-4291-8e4c-8a950a2ca543",
     "installId": "64aa48cace55b47bd6b184bfddc2eebafb218aa6c5797956bcdce02a6e49456e"
+=======
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+>>>>>>> 30babb328c3c1e6dd26548c3771b3651c8093e14
   }
 }
