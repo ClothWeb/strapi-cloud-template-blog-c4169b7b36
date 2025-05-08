@@ -65,13 +65,6 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "uid": {
-      "type": "uid",
-      "targetField": "username"
-    },
-    "first_name": {
-      "type": "string"
-    },
     "last_name": {
       "type": "string"
     },
@@ -85,6 +78,9 @@
       "type": "string"
     },
     "city": {
+      "type": "string"
+    },
+    "first_name": {
       "type": "string"
     }
   }
