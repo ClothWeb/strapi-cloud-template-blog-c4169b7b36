@@ -1,48 +1,35 @@
 'use strict';
 
-const { sanitize } = require('@strapi/utils');
-const utils = require('@strapi/utils');
-const { ValidationError } = utils.errors;
+const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = {
+module.exports = createCoreController('plugin::users-permissions.auth', ({ strapi }) => ({
     async register(ctx) {
-        const pluginStore = strapi.store({ type: 'plugin', name: 'users-permissions' });
+        const { body } = ctx.request;
 
-        const settings = await pluginStore.get({ key: 'advanced' });
-        const { email, username, password, ...rest } = ctx.request.body;
+        // Ensure required fields are present
+        if (!body.username || !body.email || !body.password) {
+            return ctx.badRequest('Missing required fields');
+        }
 
-        if (!email) throw new ValidationError('Email is required');
-        if (!username) throw new ValidationError('Username is required');
-        if (!password) throw new ValidationError('Password is required');
+        // Call the default register logic
+        const defaultRegister = await strapi
+            .plugin('users-permissions')
+            .controllers.auth.register(ctx);
 
-        // Check if the user already exists
-        const conflictingUser = await strapi.query('plugin::users-permissions.user').findOne({
-            where: { $or: [{ email: email.toLowerCase() }, { username }] },
+        // After registration, update extra fields
+        const userId = defaultRegister.user.id;
+
+        await strapi.entityService.update('plugin::users-permissions.user', userId, {
+            data: {
+                last_name: body.last_name,
+                first_name: body.first_name,
+                phone: body.phone,
+                street: body.street,
+                postal_code: body.postal_code,
+                city: body.city,
+            },
         });
 
-        if (conflictingUser) throw new ValidationError('Email or username already taken');
-
-        const newUser = {
-            email: email.toLowerCase(),
-            username,
-            password,
-            ...rest, // This will include your custom fields like userlastname, phone, etc.
-            provider: 'local',
-            confirmed: !settings.email_confirmation
-        };
-
-        const createdUser = await strapi.query('plugin::users-permissions.user').create({ data: newUser });
-
-        // Optionally send confirmation email, etc.
-
-        // Generate token
-        const token = strapi.service('plugin::users-permissions.jwt').issue({ id: createdUser.id });
-
-        const sanitizedUser = await sanitize.contentAPI.output(createdUser, strapi.getModel('plugin::users-permissions.user'));
-
-        ctx.send({
-            jwt: token,
-            user: sanitizedUser,
-        });
-    }
-};
+        return defaultRegister;
+    },
+}));
