@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,13 +16,17 @@
       "required": true,
       "unique": true
     },
-    "price_transatel": {
+    "transatel_price": {
       "type": "decimal",
       "required": true,
       "private": true
     },
-    "price_wondersim": {
+    "wondersim_price": {
       "type": "decimal"
+    },
+    "transatel_id": {
+      "type": "uid",
+      "required": true
     }
   }
 }

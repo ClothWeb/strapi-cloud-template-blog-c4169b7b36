@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
+    description: '';
     displayName: 'Product';
     pluralName: 'products';
     singularName: 'product';
@@ -389,17 +390,18 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
-    price_transatel: Schema.Attribute.Decimal &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private;
-    price_wondersim: Schema.Attribute.Decimal;
     product_name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
+    transatel_id: Schema.Attribute.UID & Schema.Attribute.Required;
+    transatel_price: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    wondersim_price: Schema.Attribute.Decimal;
   };
 }
 
