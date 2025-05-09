@@ -390,18 +390,15 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
-    product_name: Schema.Attribute.String &
+    product_name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    transatel_id: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    publishedAt: Schema.Attribute.DateTime;
-    transatel_id: Schema.Attribute.UID & Schema.Attribute.Required;
-    transatel_price: Schema.Attribute.Decimal &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private;
+    transatel_price: Schema.Attribute.Decimal;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    wondersim_price: Schema.Attribute.Decimal;
   };
 }
 

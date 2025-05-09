@@ -11,22 +11,16 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "product_name": {
+    "transatel_id": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "unique": true,
+      "required": true
+    },
+    "product_name": {
+      "type": "string"
     },
     "transatel_price": {
-      "type": "decimal",
-      "required": true,
-      "private": true
-    },
-    "wondersim_price": {
       "type": "decimal"
-    },
-    "transatel_id": {
-      "type": "uid",
-      "required": true
     }
   }
 }
