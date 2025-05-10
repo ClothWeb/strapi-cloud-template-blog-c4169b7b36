@@ -33,6 +33,9 @@
     },
     "coverage": {
       "type": "string"
+    },
+    "tags": {
+      "type": "json"
     }
   }
 }
