@@ -21,6 +21,18 @@
     },
     "transatel_price": {
       "type": "decimal"
+    },
+    "wondersim_price": {
+      "type": "decimal"
+    },
+    "validity": {
+      "type": "string"
+    },
+    "data": {
+      "type": "string"
+    },
+    "coverage": {
+      "type": "string"
     }
   }
 }
