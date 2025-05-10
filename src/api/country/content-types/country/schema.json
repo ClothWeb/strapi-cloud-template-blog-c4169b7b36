@@ -12,13 +12,16 @@
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "code2": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "code3": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     }
   }
 }

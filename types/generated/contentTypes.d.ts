@@ -381,8 +381,8 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    code2: Schema.Attribute.String;
-    code3: Schema.Attribute.String;
+    code2: Schema.Attribute.String & Schema.Attribute.Unique;
+    code3: Schema.Attribute.String & Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -392,7 +392,7 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
       'api::country.country'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
