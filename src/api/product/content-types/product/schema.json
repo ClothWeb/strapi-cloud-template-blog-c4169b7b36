@@ -37,8 +37,10 @@
     "tags": {
       "type": "json"
     },
-    "test": {
-      "type": "json"
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
     }
   }
 }

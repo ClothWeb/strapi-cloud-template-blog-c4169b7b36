@@ -369,6 +369,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
+  collectionName: 'countries';
+  info: {
+    description: '';
+    displayName: 'country';
+    pluralName: 'countries';
+    singularName: 'country';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code2: Schema.Attribute.String;
+    code3: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::country.country'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -381,6 +412,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
     coverage: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -395,7 +427,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     product_name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     tags: Schema.Attribute.JSON;
-    test: Schema.Attribute.JSON;
     transatel_id: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -922,6 +953,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::country.country': ApiCountryCountry;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
