@@ -35,6 +35,9 @@
       "type": "string"
     },
     "tags": {
+      "type": "json"
+    },
+    "test": {
       "type": "json",
       "private": true
     }
