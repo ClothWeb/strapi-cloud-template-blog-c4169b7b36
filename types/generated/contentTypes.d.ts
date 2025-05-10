@@ -395,7 +395,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     product_name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     tags: Schema.Attribute.JSON;
-    test: Schema.Attribute.JSON & Schema.Attribute.Private;
+    test: Schema.Attribute.JSON;
     transatel_id: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;

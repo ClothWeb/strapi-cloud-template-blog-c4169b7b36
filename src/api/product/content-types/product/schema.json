@@ -38,8 +38,7 @@
       "type": "json"
     },
     "test": {
-      "type": "json",
-      "private": true
+      "type": "json"
     }
   }
 }
