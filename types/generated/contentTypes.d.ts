@@ -373,7 +373,7 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
   collectionName: 'countries';
   info: {
     description: '';
-    displayName: 'country';
+    displayName: 'Country';
     pluralName: 'countries';
     singularName: 'country';
   };
