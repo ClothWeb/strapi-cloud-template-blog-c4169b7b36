@@ -68,9 +68,6 @@
     "last_name": {
       "type": "string"
     },
-    "phone": {
-      "type": "biginteger"
-    },
     "street": {
       "type": "string"
     },
@@ -82,6 +79,10 @@
     },
     "first_name": {
       "type": "string"
+    },
+    "phone": {
+      "type": "string",
+      "unique": true
     }
   }
 }
