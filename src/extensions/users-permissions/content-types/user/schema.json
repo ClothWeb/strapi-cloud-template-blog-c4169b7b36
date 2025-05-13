@@ -88,6 +88,27 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "vta_number": {
+      "type": "string"
+    },
+    "billing_street": {
+      "type": "string"
+    },
+    "billing_postal_code": {
+      "type": "string"
+    },
+    "billing_city": {
+      "type": "string"
+    },
+    "billing_country": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
     }
   }
 }
