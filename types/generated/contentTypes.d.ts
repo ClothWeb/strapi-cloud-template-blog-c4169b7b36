@@ -923,6 +923,7 @@ export interface PluginUsersPermissionsUser
       }>;
     phone: Schema.Attribute.String & Schema.Attribute.Unique;
     postal_code: Schema.Attribute.String;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
