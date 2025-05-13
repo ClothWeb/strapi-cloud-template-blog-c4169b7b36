@@ -915,6 +915,7 @@ export interface PluginUsersPermissionsUser
         minLength: 6;
       }>;
     first_name: Schema.Attribute.String;
+    has_billing_address: Schema.Attribute.Boolean;
     last_name: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

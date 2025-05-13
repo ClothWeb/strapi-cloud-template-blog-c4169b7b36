@@ -109,6 +109,9 @@
     },
     "country": {
       "type": "string"
+    },
+    "has_billing_address": {
+      "type": "boolean"
     }
   }
 }
