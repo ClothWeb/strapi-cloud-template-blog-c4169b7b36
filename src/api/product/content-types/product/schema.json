@@ -39,8 +39,9 @@
     },
     "countries": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::country.country"
+      "relation": "manyToMany",
+      "target": "api::country.country",
+      "inversedBy": "products"
     }
   }
 }
