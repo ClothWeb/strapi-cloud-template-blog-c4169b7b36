@@ -22,6 +22,12 @@
     "code3": {
       "type": "string",
       "unique": true
+    },
+    "continent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::continent.continent",
+      "inversedBy": "countries"
     }
   }
 }
