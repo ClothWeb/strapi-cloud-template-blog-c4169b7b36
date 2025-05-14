@@ -28,9 +28,6 @@
     "validity": {
       "type": "string"
     },
-    "data": {
-      "type": "string"
-    },
     "coverage": {
       "type": "string"
     },
@@ -42,6 +39,9 @@
       "relation": "manyToMany",
       "target": "api::country.country",
       "inversedBy": "products"
+    },
+    "data": {
+      "type": "integer"
     }
   }
 }
