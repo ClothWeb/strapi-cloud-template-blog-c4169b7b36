@@ -369,6 +369,47 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCodeCode extends Struct.CollectionTypeSchema {
+  collectionName: 'codes';
+  info: {
+    description: '';
+    displayName: 'code';
+    pluralName: 'codes';
+    singularName: 'code';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    amount: Schema.Attribute.Integer;
+    continents: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::continent.continent'
+    >;
+    country: Schema.Attribute.Relation<'oneToOne', 'api::country.country'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::code.code'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_users: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    valid_from: Schema.Attribute.Date;
+    valid_until: Schema.Attribute.Date;
+  };
+}
+
 export interface ApiContinentContinent extends Struct.CollectionTypeSchema {
   collectionName: 'continents';
   info: {
@@ -997,6 +1038,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::code.code': ApiCodeCode;
       'api::continent.continent': ApiContinentContinent;
       'api::country.country': ApiCountryCountry;
       'api::product.product': ApiProductProduct;
