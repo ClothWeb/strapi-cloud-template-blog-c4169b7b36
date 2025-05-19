@@ -112,6 +112,12 @@
     },
     "has_billing_address": {
       "type": "boolean"
+    },
+    "esim": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::esim.esim",
+      "inversedBy": "user"
     }
   }
 }

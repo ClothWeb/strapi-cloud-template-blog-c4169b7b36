@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "esims",
+  "info": {
+    "singularName": "esim",
+    "pluralName": "esims",
+    "displayName": "Esim"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "serial": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "esim"
+    }
+  }
+}

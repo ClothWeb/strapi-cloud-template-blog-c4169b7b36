@@ -373,7 +373,7 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
   collectionName: 'codes';
   info: {
     description: '';
-    displayName: 'code';
+    displayName: 'Code';
     pluralName: 'codes';
     singularName: 'code';
   };
@@ -473,6 +473,35 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
+  collectionName: 'esims';
+  info: {
+    displayName: 'Esim';
+    pluralName: 'esims';
+    singularName: 'esim';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::esim.esim'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    serial: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -990,6 +1019,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    esim: Schema.Attribute.Relation<'oneToOne', 'api::esim.esim'>;
     first_name: Schema.Attribute.String;
     has_billing_address: Schema.Attribute.Boolean;
     last_name: Schema.Attribute.String;
@@ -1041,6 +1071,7 @@ declare module '@strapi/strapi' {
       'api::code.code': ApiCodeCode;
       'api::continent.continent': ApiContinentContinent;
       'api::country.country': ApiCountryCountry;
+      'api::esim.esim': ApiEsimEsim;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
