@@ -1,17 +1,16 @@
 {
   "kind": "collectionType",
-  "collectionName": "esims",
+  "collectionName": "orders",
   "info": {
-    "singularName": "esim",
-    "pluralName": "esims",
-    "displayName": "Esim",
-    "description": ""
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "serial": {
+    "Number": {
       "type": "string"
     },
     "products": {

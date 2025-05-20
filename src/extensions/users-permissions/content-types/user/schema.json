@@ -84,11 +84,6 @@
       "type": "string",
       "unique": true
     },
-    "products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::product.product"
-    },
     "company_name": {
       "type": "string"
     },
@@ -113,11 +108,15 @@
     "has_billing_address": {
       "type": "boolean"
     },
-    "esim": {
+    "orders": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::esim.esim",
-      "inversedBy": "user"
+      "relation": "oneToMany",
+      "target": "api::order.order"
+    },
+    "esims": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::esim.esim"
     }
   }
 }
