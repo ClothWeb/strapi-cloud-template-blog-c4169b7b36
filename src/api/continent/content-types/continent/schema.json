@@ -17,10 +17,10 @@
     "code": {
       "type": "string"
     },
-    "codes": {
+    "countries": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::code.code",
+      "target": "api::country.country",
       "mappedBy": "continent"
     }
   }

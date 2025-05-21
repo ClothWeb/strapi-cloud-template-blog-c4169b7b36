@@ -23,11 +23,17 @@
       "type": "string",
       "unique": true
     },
-    "products": {
+    "continent": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
+      "target": "api::continent.continent",
+      "inversedBy": "countries"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
       "target": "api::product.product",
-      "mappedBy": "country"
+      "inversedBy": "countries"
     }
   }
 }
