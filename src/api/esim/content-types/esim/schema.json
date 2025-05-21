@@ -30,11 +30,11 @@
       "default": "available",
       "required": false
     },
-    "users_permissions_user": {
+    "user": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "esim"
+      "inversedBy": "esims"
     }
   }
 }
