@@ -491,12 +491,16 @@ export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    esim_status: Schema.Attribute.Enumeration<
+      ['available', 'blocked', 'attributed']
+    > &
+      Schema.Attribute.DefaultTo<'available'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::esim.esim'> &
       Schema.Attribute.Private;
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
-    serial: Schema.Attribute.String;
+    serial: Schema.Attribute.String & Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

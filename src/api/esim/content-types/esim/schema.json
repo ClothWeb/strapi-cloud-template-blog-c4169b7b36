@@ -12,7 +12,8 @@
   },
   "attributes": {
     "serial": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "products": {
       "type": "relation",
@@ -24,6 +25,16 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "esims"
+    },
+    "esim_status": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "blocked",
+        "attributed"
+      ],
+      "default": "available",
+      "required": false
     }
   }
 }
