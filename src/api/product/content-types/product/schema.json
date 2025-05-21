@@ -43,11 +43,11 @@
       "target": "api::code.code",
       "inversedBy": "products"
     },
-    "countries": {
+    "country": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::country.country",
-      "mappedBy": "product"
+      "inversedBy": "products"
     }
   }
 }
