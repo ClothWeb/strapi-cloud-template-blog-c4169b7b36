@@ -116,8 +116,7 @@
     "esims": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::esim.esim",
-      "mappedBy": "user"
+      "target": "api::esim.esim"
     }
   }
 }
