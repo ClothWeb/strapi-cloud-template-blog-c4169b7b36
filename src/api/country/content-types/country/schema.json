@@ -29,11 +29,11 @@
       "target": "api::continent.continent",
       "inversedBy": "countries"
     },
-    "products": {
+    "product": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::product.product",
-      "mappedBy": "country"
+      "inversedBy": "countries"
     }
   }
 }
