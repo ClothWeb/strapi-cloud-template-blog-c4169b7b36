@@ -382,11 +382,6 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
   };
   attributes: {
     amount: Schema.Attribute.Integer;
-    continents: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::continent.continent'
-    >;
-    country: Schema.Attribute.Relation<'oneToOne', 'api::country.country'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -401,10 +396,6 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    users_permissions_users: Schema.Attribute.Relation<
-      'oneToMany',
-      'plugin::users-permissions.user'
-    >;
     valid_from: Schema.Attribute.Date;
     valid_until: Schema.Attribute.Date;
   };
@@ -468,7 +459,7 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Unique;
-    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -549,7 +540,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    countries: Schema.Attribute.Relation<'manyToMany', 'api::country.country'>;
+    code: Schema.Attribute.Relation<'manyToOne', 'api::code.code'>;
+    countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
     coverage: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
