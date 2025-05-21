@@ -115,9 +115,15 @@
     },
     "esims": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::esim.esim",
-      "mappedBy": "users_permissions_users"
+      "mappedBy": "user"
+    },
+    "tests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::test.test",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
