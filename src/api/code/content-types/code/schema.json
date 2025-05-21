@@ -30,6 +30,12 @@
       "relation": "oneToMany",
       "target": "api::product.product",
       "mappedBy": "code"
+    },
+    "continent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::continent.continent",
+      "inversedBy": "codes"
     }
   }
 }

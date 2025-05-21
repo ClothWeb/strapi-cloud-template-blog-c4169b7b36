@@ -382,6 +382,10 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
   };
   attributes: {
     amount: Schema.Attribute.Integer;
+    continent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::continent.continent'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -404,6 +408,7 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
 export interface ApiContinentContinent extends Struct.CollectionTypeSchema {
   collectionName: 'continents';
   info: {
+    description: '';
     displayName: 'Continent';
     pluralName: 'continents';
     singularName: 'continent';
@@ -413,7 +418,7 @@ export interface ApiContinentContinent extends Struct.CollectionTypeSchema {
   };
   attributes: {
     code: Schema.Attribute.String;
-    countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
+    codes: Schema.Attribute.Relation<'oneToMany', 'api::code.code'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -445,10 +450,6 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
   attributes: {
     code2: Schema.Attribute.String & Schema.Attribute.Unique;
     code3: Schema.Attribute.String & Schema.Attribute.Unique;
-    continent: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::continent.continent'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -459,7 +460,7 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Unique;
-    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -541,7 +542,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
   attributes: {
     code: Schema.Attribute.Relation<'manyToOne', 'api::code.code'>;
-    countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
+    country: Schema.Attribute.Relation<'manyToOne', 'api::country.country'>;
     coverage: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
