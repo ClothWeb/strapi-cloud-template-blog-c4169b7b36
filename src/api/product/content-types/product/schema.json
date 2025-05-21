@@ -45,9 +45,9 @@
     },
     "countries": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::country.country",
-      "mappedBy": "product"
+      "mappedBy": "products"
     }
   }
 }
