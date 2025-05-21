@@ -496,8 +496,8 @@ export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    users_permissions_user: Schema.Attribute.Relation<
-      'manyToOne',
+    users_permissions_users: Schema.Attribute.Relation<
+      'manyToMany',
       'plugin::users-permissions.user'
     >;
   };
@@ -1044,7 +1044,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
-    esims: Schema.Attribute.Relation<'oneToMany', 'api::esim.esim'>;
+    esims: Schema.Attribute.Relation<'manyToMany', 'api::esim.esim'>;
     first_name: Schema.Attribute.String;
     has_billing_address: Schema.Attribute.Boolean;
     last_name: Schema.Attribute.String;

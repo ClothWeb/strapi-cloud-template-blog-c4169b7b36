@@ -115,9 +115,9 @@
     },
     "esims": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::esim.esim",
-      "mappedBy": "users_permissions_user"
+      "mappedBy": "users_permissions_users"
     }
   }
 }
