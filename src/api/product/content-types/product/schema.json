@@ -93,6 +93,22 @@
       "relation": "manyToMany",
       "target": "api::country.country",
       "mappedBy": "products"
+    },
+    "description_short": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description_long": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
