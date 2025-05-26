@@ -30,6 +30,9 @@
       "relation": "oneToMany",
       "target": "api::product.product",
       "mappedBy": "code"
+    },
+    "partner": {
+      "type": "boolean"
     }
   }
 }
