@@ -33,6 +33,12 @@
     },
     "partner": {
       "type": "boolean"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "code"
     }
   }
 }

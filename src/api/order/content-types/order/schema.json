@@ -37,6 +37,12 @@
         "on-hold",
         "refunded"
       ]
+    },
+    "code": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::code.code",
+      "inversedBy": "orders"
     }
   }
 }

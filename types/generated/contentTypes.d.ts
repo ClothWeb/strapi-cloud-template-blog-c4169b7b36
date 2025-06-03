@@ -391,6 +391,7 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
     partner: Schema.Attribute.Boolean;
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
@@ -516,6 +517,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    code: Schema.Attribute.Relation<'manyToOne', 'api::code.code'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
