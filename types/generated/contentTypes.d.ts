@@ -474,7 +474,8 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
 export interface ApiDeviceDevice extends Struct.CollectionTypeSchema {
   collectionName: 'devices';
   info: {
-    displayName: 'device';
+    description: '';
+    displayName: 'Device';
     pluralName: 'devices';
     singularName: 'device';
   };
