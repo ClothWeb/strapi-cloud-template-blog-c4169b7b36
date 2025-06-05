@@ -471,6 +471,34 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDeviceDevice extends Struct.CollectionTypeSchema {
+  collectionName: 'devices';
+  info: {
+    displayName: 'device';
+    pluralName: 'devices';
+    singularName: 'device';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::device.device'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
   collectionName: 'esims';
   info: {
@@ -1173,6 +1201,7 @@ declare module '@strapi/strapi' {
       'api::code.code': ApiCodeCode;
       'api::continent.continent': ApiContinentContinent;
       'api::country.country': ApiCountryCountry;
+      'api::device.device': ApiDeviceDevice;
       'api::esim.esim': ApiEsimEsim;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
