@@ -117,8 +117,7 @@
     "country": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::country.country",
-      "inversedBy": "user"
+      "target": "api::country.country"
     },
     "billing_country": {
       "type": "relation",
