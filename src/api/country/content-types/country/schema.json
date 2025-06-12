@@ -67,7 +67,13 @@
       "type": "decimal",
       "default": 21
     },
-    "user": {
+    "user_country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "country"
+    },
+    "user_billling_country": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
