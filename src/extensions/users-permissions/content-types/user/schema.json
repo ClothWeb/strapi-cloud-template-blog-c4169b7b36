@@ -108,12 +108,6 @@
       "target": "api::order.order",
       "mappedBy": "user"
     },
-    "esims": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::esim.esim",
-      "mappedBy": "user"
-    },
     "country": {
       "type": "relation",
       "relation": "oneToOne",
@@ -125,6 +119,12 @@
       "relation": "oneToOne",
       "target": "api::country.country",
       "inversedBy": "user_billling_country"
+    },
+    "esim": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::esim.esim",
+      "mappedBy": "user"
     }
   }
 }

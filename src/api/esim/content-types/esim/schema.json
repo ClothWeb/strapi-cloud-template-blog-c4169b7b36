@@ -35,9 +35,9 @@
     },
     "user": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "esims"
+      "inversedBy": "esim"
     }
   }
 }
