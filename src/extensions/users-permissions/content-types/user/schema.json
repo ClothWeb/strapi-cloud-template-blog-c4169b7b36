@@ -99,12 +99,6 @@
     "billing_city": {
       "type": "string"
     },
-    "billing_country": {
-      "type": "string"
-    },
-    "country": {
-      "type": "string"
-    },
     "has_billing_address": {
       "type": "boolean"
     },
@@ -119,6 +113,18 @@
       "relation": "oneToMany",
       "target": "api::esim.esim",
       "mappedBy": "user"
+    },
+    "country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::country.country",
+      "inversedBy": "user"
+    },
+    "billing_country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::country.country",
+      "inversedBy": "user"
     }
   }
 }
