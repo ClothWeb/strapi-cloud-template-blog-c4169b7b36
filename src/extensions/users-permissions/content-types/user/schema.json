@@ -108,23 +108,17 @@
       "target": "api::order.order",
       "mappedBy": "user"
     },
-    "country": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::country.country",
-      "inversedBy": "user_country"
-    },
-    "billing_country": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::country.country",
-      "inversedBy": "user_billling_country"
-    },
     "esim": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::esim.esim",
       "mappedBy": "user"
+    },
+    "country": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::country.country",
+      "inversedBy": "user_countries"
     }
   }
 }
