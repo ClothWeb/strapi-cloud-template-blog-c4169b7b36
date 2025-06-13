@@ -12,7 +12,8 @@ module.exports = (plugin) => {
             'plugin::users-permissions.user',
             user.id,
             {
-                populate: ['country_test', 'billing_country'], // add anything you want to fetch
+                //populate: ['country_test', 'billing_country'], // add anything you want to fetch
+                populate: ['country_test'], // add anything you want to fetch
             }
         );
 
