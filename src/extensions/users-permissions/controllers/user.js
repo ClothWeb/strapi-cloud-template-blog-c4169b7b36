@@ -1,14 +1,25 @@
-// In extensions/users-permissions/controllers/user.js
+'use strict';
+
 const { sanitize } = require('@strapi/utils');
 
 module.exports = {
-    async findOne(ctx) {
-        const { id } = ctx.params;
-        const entity = await strapi.entityService.findOne('plugin::users-permissions.user', id, {
-            populate: ['country']
-        });
+    async me(ctx) {
+        const user = ctx.state.user;
 
-        const sanitizedEntity = await sanitize.contentAPI.output(entity, strapi.getModel('plugin::users-permissions.user'), ctx);
-        return this.transformResponse(sanitizedEntity);
+        if (!user) {
+            return ctx.unauthorized();
+        }
+
+        const userWithRelations = await strapi.entityService.findOne(
+            'plugin::users-permissions.user',
+            user.id,
+            {
+                populate: ['country_test'], // Include anything else you need here
+            }
+        );
+
+        const sanitizedUser = await sanitize.contentAPI.output(userWithRelations, strapi.getModel('plugin::users-permissions.user'));
+
+        ctx.body = sanitizedUser;
     }
 };
