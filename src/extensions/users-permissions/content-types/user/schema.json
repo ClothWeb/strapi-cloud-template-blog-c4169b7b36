@@ -125,6 +125,12 @@
       "relation": "manyToOne",
       "target": "api::country.country",
       "inversedBy": "users_billing_county"
+    },
+    "country_test": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::country.country",
+      "inversedBy": "user"
     }
   }
 }
