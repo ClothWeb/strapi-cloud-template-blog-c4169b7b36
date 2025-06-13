@@ -118,7 +118,13 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::country.country",
-      "inversedBy": "user_countries"
+      "inversedBy": "users_country"
+    },
+    "billing_country": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::country.country",
+      "inversedBy": "users_billing_county"
     }
   }
 }

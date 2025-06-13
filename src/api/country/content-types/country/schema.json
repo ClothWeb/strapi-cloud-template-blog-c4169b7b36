@@ -67,11 +67,17 @@
       "type": "decimal",
       "default": 21
     },
-    "user_countries": {
+    "users_country": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "country"
+    },
+    "users_billing_county": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "billing_country"
     }
   }
 }

@@ -509,7 +509,11 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    user_countries: Schema.Attribute.Relation<
+    users_billing_county: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    users_country: Schema.Attribute.Relation<
       'oneToMany',
       'plugin::users-permissions.user'
     >;
@@ -1179,6 +1183,10 @@ export interface PluginUsersPermissionsUser
   };
   attributes: {
     billing_city: Schema.Attribute.String;
+    billing_country: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::country.country'
+    >;
     billing_postal_code: Schema.Attribute.String;
     billing_street: Schema.Attribute.String;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
