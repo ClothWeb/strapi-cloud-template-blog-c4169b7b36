@@ -2,6 +2,7 @@
 
 module.exports = (plugin) => {
     plugin.controllers.user.me = async (ctx) => {
+        console.log('CUSTOM /me endpoint hit');
         const user = ctx.state.user;
 
         if (!user) {
