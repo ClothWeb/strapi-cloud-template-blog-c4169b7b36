@@ -78,12 +78,6 @@
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "billing_country"
-    },
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "country_test"
     }
   }
 }
