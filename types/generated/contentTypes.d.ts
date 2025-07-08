@@ -531,7 +531,7 @@ export interface ApiDeviceDevice extends Struct.CollectionTypeSchema {
     singularName: 'device';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -560,7 +560,7 @@ export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
     singularName: 'esim';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
@@ -638,7 +638,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     singularName: 'order';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     code: Schema.Attribute.Relation<'manyToOne', 'api::code.code'>;
@@ -682,7 +682,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     singularName: 'product';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     code: Schema.Attribute.Relation<'manyToOne', 'api::code.code'>;
