@@ -65,6 +65,9 @@
     "description_long": {
       "type": "richtext",
       "pluginOptions": {}
+    },
+    "display_into_home": {
+      "type": "boolean"
     }
   }
 }

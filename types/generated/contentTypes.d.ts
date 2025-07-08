@@ -680,6 +680,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     data: Schema.Attribute.Integer;
     description_long: Schema.Attribute.RichText;
     description_short: Schema.Attribute.Text;
+    display_into_home: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
