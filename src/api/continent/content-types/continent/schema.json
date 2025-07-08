@@ -37,6 +37,9 @@
       "relation": "oneToMany",
       "target": "api::country.country",
       "mappedBy": "continent"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
