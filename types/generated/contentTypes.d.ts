@@ -412,7 +412,7 @@ export interface ApiContinentContinent extends Struct.CollectionTypeSchema {
     singularName: 'continent';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -457,7 +457,7 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
     singularName: 'country';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
