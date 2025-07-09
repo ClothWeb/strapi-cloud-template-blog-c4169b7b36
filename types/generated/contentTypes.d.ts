@@ -580,6 +580,7 @@ export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::esim.esim'> &
       Schema.Attribute.Private;
+    msisdn: Schema.Attribute.String;
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     serial: Schema.Attribute.String & Schema.Attribute.Unique;
