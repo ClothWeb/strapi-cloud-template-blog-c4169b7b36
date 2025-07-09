@@ -81,6 +81,14 @@
     },
     "highlight": {
       "type": "boolean"
+    },
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
