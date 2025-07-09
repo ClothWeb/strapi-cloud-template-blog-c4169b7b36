@@ -66,8 +66,15 @@
       "type": "richtext",
       "pluginOptions": {}
     },
-    "display_into_home": {
-      "type": "boolean"
+    "validity_duration_unit": {
+      "type": "enumeration",
+      "enum": [
+        "months",
+        "days"
+      ]
+    },
+    "validity_duration_occurrences": {
+      "type": "integer"
     }
   }
 }

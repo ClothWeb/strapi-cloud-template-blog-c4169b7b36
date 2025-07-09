@@ -695,7 +695,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     data: Schema.Attribute.Integer;
     description_long: Schema.Attribute.RichText;
     description_short: Schema.Attribute.Text;
-    display_into_home: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -713,6 +712,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     validity: Schema.Attribute.String;
+    validity_duration_occurrences: Schema.Attribute.Integer;
+    validity_duration_unit: Schema.Attribute.Enumeration<['months', 'days']>;
     wondersim_price: Schema.Attribute.Decimal;
   };
 }
