@@ -632,7 +632,12 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     location: Schema.Attribute.Enumeration<['home', 'pack']>;
     publishedAt: Schema.Attribute.DateTime;
-    test: Schema.Attribute.RichText;
+    test: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
