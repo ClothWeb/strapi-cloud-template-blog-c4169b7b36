@@ -47,6 +47,19 @@
           "localized": true
         }
       }
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "esim",
+        "installation",
+        "packs"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
