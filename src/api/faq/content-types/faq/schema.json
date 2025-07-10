@@ -40,14 +40,6 @@
         "pack"
       ]
     },
-    "response": {
-      "type": "richtext",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "categories": {
       "type": "enumeration",
       "enum": [
