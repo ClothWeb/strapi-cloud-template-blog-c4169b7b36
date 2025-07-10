@@ -39,6 +39,14 @@
         "home",
         "pack"
       ]
+    },
+    "response": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
