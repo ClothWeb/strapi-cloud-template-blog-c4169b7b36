@@ -35,9 +35,21 @@
     "categories": {
       "type": "enumeration",
       "enum": [
-        "esim",
-        "installation",
-        "packs"
+        "eSIM & Kompatibilität",
+        "Daten & Nutzung",
+        "Zahlung & Währung ",
+        "Aktivierung & Netzabdeckung ",
+        "Zusätzliche FAQ ",
+        "Kauf & Lieferung",
+        "Technik & Einstellungen ",
+        "Reise & Nutzung im Ausland ",
+        "Support & Sicherheit ",
+        "Weitere Sonderfragen",
+        "Benutzerkonto & Verwaltung",
+        "Storno & Rückerstattung",
+        "Verbindungsqualität & Geschwindigkeit ",
+        "Nachhaltigkeit",
+        "Reiseplanung & Flexibilität "
       ],
       "pluginOptions": {
         "i18n": {

@@ -612,7 +612,23 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
   attributes: {
     categories: Schema.Attribute.Enumeration<
-      ['esim', 'installation', 'packs']
+      [
+        'eSIM & Kompatibilit\u00E4t',
+        'Daten & Nutzung',
+        'Zahlung & W\u00E4hrung ',
+        'Aktivierung & Netzabdeckung ',
+        'Zus\u00E4tzliche FAQ ',
+        'Kauf & Lieferung',
+        'Technik & Einstellungen ',
+        'Reise & Nutzung im Ausland ',
+        'Support & Sicherheit ',
+        'Weitere Sonderfragen',
+        'Benutzerkonto & Verwaltung',
+        'Storno & R\u00FCckerstattung',
+        'Verbindungsqualit\u00E4t & Geschwindigkeit ',
+        'Nachhaltigkeit',
+        'Reiseplanung & Flexibilit\u00E4t ',
+      ]
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
