@@ -611,6 +611,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    answer: Schema.Attribute.Blocks;
     categories: Schema.Attribute.Enumeration<
       ['esim', 'installation', 'packs']
     > &
