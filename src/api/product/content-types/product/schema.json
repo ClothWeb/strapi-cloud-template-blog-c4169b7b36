@@ -43,7 +43,7 @@
       "pluginOptions": {}
     },
     "data": {
-      "type": "integer",
+      "type": "decimal",
       "pluginOptions": {}
     },
     "code": {
