@@ -679,6 +679,10 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
   attributes: {
     about: Schema.Attribute.Component<'about.about', false>;
+    countries_higlight: Schema.Attribute.Component<
+      'products-higlight.products-higlight',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -686,16 +690,13 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'esim-compatibility.esim-compatibility',
       false
     >;
+    faq: Schema.Attribute.Component<'faq.faq', false>;
     header_sub_title: Schema.Attribute.String;
     header_title: Schema.Attribute.String;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::homepage.homepage'
-    >;
-    prodcuts_higlight: Schema.Attribute.Component<
-      'products-higlight.products-higlight',
-      false
     >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

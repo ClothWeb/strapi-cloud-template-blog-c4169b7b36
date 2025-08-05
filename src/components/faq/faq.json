@@ -1,9 +1,7 @@
 {
-  "collectionName": "components_products_higlight_products_higlights",
+  "collectionName": "components_faq_faqs",
   "info": {
-    "displayName": "countries higlight",
-    "description": "",
-    "icon": ""
+    "displayName": "FAQ"
   },
   "options": {},
   "attributes": {
@@ -13,10 +11,10 @@
     "sub_title": {
       "type": "string"
     },
-    "countries": {
+    "faqs": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::country.country"
+      "target": "api::faq.faq"
     }
   }
 }

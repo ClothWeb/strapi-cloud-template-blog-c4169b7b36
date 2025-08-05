@@ -28,6 +28,18 @@ export interface EsimCompatibilityEsimCompatibility
   };
 }
 
+export interface FaqFaq extends Struct.ComponentSchema {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'FAQ';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ImageTextImageText extends Struct.ComponentSchema {
   collectionName: 'components_image_text_image_texts';
   info: {
@@ -48,10 +60,12 @@ export interface ProductsHiglightProductsHiglight
   extends Struct.ComponentSchema {
   collectionName: 'components_products_higlight_products_higlights';
   info: {
-    displayName: 'products higlight';
+    description: '';
+    displayName: 'countries higlight';
+    icon: '';
   };
   attributes: {
-    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
     sub_title: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
@@ -62,6 +76,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about.about': AboutAbout;
       'esim-compatibility.esim-compatibility': EsimCompatibilityEsimCompatibility;
+      'faq.faq': FaqFaq;
       'image-text.image-text': ImageTextImageText;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
     }

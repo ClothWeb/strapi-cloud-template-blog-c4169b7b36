@@ -22,7 +22,7 @@
     "header_sub_title": {
       "type": "string"
     },
-    "prodcuts_higlight": {
+    "countries_higlight": {
       "displayName": "products higlight",
       "type": "component",
       "repeatable": false,
@@ -39,6 +39,12 @@
       "type": "component",
       "repeatable": false,
       "component": "about.about"
+    },
+    "faq": {
+      "displayName": "FAQ",
+      "type": "component",
+      "repeatable": false,
+      "component": "faq.faq"
     }
   }
 }
