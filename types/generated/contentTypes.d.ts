@@ -757,7 +757,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    data: Schema.Attribute.Integer;
+    data: Schema.Attribute.Decimal;
     description_long: Schema.Attribute.RichText;
     description_short: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
