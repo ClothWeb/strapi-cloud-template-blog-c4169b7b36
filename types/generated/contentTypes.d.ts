@@ -678,9 +678,14 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    about: Schema.Attribute.Component<'about.about', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    esim_compatibility: Schema.Attribute.Component<
+      'esim-compatibility.esim-compatibility',
+      false
+    >;
     header_sub_title: Schema.Attribute.String;
     header_title: Schema.Attribute.String;
     locale: Schema.Attribute.String;
@@ -688,7 +693,13 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::homepage.homepage'
     >;
+    prodcuts_higlight: Schema.Attribute.Component<
+      'products-higlight.products-higlight',
+      false
+    >;
     publishedAt: Schema.Attribute.DateTime;
+    section_products_highlight_sub_title: Schema.Attribute.String;
+    section_products_highlight_title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -21,6 +21,30 @@
     },
     "header_sub_title": {
       "type": "string"
+    },
+    "section_products_highlight_title": {
+      "type": "string"
+    },
+    "section_products_highlight_sub_title": {
+      "type": "string"
+    },
+    "prodcuts_higlight": {
+      "displayName": "products higlight",
+      "type": "component",
+      "repeatable": false,
+      "component": "products-higlight.products-higlight"
+    },
+    "esim_compatibility": {
+      "displayName": "Esim Compatibility",
+      "type": "component",
+      "repeatable": false,
+      "component": "esim-compatibility.esim-compatibility"
+    },
+    "about": {
+      "displayName": "About",
+      "type": "component",
+      "repeatable": false,
+      "component": "about.about"
     }
   }
 }

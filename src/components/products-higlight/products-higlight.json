@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_products_higlight_products_higlights",
+  "info": {
+    "displayName": "products higlight"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  }
+}
