@@ -698,8 +698,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       false
     >;
     publishedAt: Schema.Attribute.DateTime;
-    section_products_highlight_sub_title: Schema.Attribute.String;
-    section_products_highlight_title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

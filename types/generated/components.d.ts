@@ -34,7 +34,14 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
     description: '';
     displayName: 'Image / Text';
   };
-  attributes: {};
+  attributes: {
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface ProductsHiglightProductsHiglight

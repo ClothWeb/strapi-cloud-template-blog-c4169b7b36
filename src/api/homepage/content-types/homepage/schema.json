@@ -22,12 +22,6 @@
     "header_sub_title": {
       "type": "string"
     },
-    "section_products_highlight_title": {
-      "type": "string"
-    },
-    "section_products_highlight_sub_title": {
-      "type": "string"
-    },
     "prodcuts_higlight": {
       "displayName": "products higlight",
       "type": "component",
