@@ -696,11 +696,21 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
-    header_sub_title: Schema.Attribute.String;
-    header_title: Schema.Attribute.String;
+    header_sub_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    header_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     image_text: Schema.Attribute.Component<'image-text.image-text', true>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
