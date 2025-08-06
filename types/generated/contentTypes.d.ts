@@ -691,6 +691,14 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       false
     >;
     faq: Schema.Attribute.Component<'faq.faq', false>;
+    header_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     header_sub_title: Schema.Attribute.String;
     header_title: Schema.Attribute.String;
     image_text: Schema.Attribute.Component<'image-text.image-text', true>;

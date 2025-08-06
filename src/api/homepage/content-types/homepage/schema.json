@@ -50,6 +50,21 @@
       "type": "component",
       "repeatable": true,
       "component": "image-text.image-text"
+    },
+    "header_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
