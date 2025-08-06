@@ -16,6 +16,7 @@ export interface EsimCompatibilityEsimCompatibility
   extends Struct.ComponentSchema {
   collectionName: 'components_esim_compatibility_esim_compatibilities';
   info: {
+    description: '';
     displayName: 'Esim Compatibility';
   };
   attributes: {
@@ -24,6 +25,7 @@ export interface EsimCompatibilityEsimCompatibility
       true
     >;
     placeholder_search: Schema.Attribute.String;
+    sub_title: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_esim_compatibility_esim_compatibilities",
   "info": {
-    "displayName": "Esim Compatibility"
+    "displayName": "Esim Compatibility",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,14 +13,18 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "sub_title": {
+      "type": "string"
     }
   }
 }
