@@ -52,7 +52,7 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
       true
     >;
     sub_title: Schema.Attribute.String;
-    Text: Schema.Attribute.Blocks;
+    text: Schema.Attribute.Blocks;
     title: Schema.Attribute.String;
   };
 }
