@@ -693,6 +693,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     faq: Schema.Attribute.Component<'faq.faq', false>;
     header_sub_title: Schema.Attribute.String;
     header_title: Schema.Attribute.String;
+    image_text: Schema.Attribute.Component<'image-text.image-text', true>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

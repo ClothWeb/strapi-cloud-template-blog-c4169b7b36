@@ -45,6 +45,11 @@
       "type": "component",
       "repeatable": false,
       "component": "faq.faq"
+    },
+    "image_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image-text.image-text"
     }
   }
 }
