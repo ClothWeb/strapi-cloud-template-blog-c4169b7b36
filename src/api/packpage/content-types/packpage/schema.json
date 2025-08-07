@@ -4,7 +4,8 @@
   "info": {
     "singularName": "packpage",
     "pluralName": "packpages",
-    "displayName": "Packpage"
+    "displayName": "Packpage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -54,6 +55,12 @@
       "type": "component",
       "repeatable": true,
       "component": "pack-info.pack-infos"
+    },
+    "esim_installation_tuto": {
+      "displayName": "esim_installation_tuto",
+      "type": "component",
+      "repeatable": false,
+      "component": "esim-installation-tuto.esim-installation-tuto"
     }
   }
 }

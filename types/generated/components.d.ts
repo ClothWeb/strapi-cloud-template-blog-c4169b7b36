@@ -30,6 +30,18 @@ export interface EsimCompatibilityEsimCompatibility
   };
 }
 
+export interface EsimInstallationTutoEsimInstallationTuto
+  extends Struct.ComponentSchema {
+  collectionName: 'components_esim_installation_tuto_esim_installation_tutos';
+  info: {
+    displayName: 'esim_installation_tuto';
+  };
+  attributes: {
+    image_text: Schema.Attribute.Component<'image-text.image-text', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface FaqFaq extends Struct.ComponentSchema {
   collectionName: 'components_faq_faqs';
   info: {
@@ -91,6 +103,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about.about': AboutAbout;
       'esim-compatibility.esim-compatibility': EsimCompatibilityEsimCompatibility;
+      'esim-installation-tuto.esim-installation-tuto': EsimInstallationTutoEsimInstallationTuto;
       'faq.faq': FaqFaq;
       'image-text.image-text': ImageTextImageText;
       'pack-info.pack-infos': PackInfoPackInfos;

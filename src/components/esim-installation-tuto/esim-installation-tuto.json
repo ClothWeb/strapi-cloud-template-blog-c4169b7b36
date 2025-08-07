@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_esim_installation_tuto_esim_installation_tutos",
+  "info": {
+    "displayName": "esim_installation_tuto"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image-text.image-text"
+    }
+  }
+}

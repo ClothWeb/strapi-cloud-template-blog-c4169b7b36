@@ -771,6 +771,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
 export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
   collectionName: 'packpages';
   info: {
+    description: '';
     displayName: 'Packpage';
     pluralName: 'packpages';
     singularName: 'packpage';
@@ -787,6 +788,10 @@ export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    esim_installation_tuto: Schema.Attribute.Component<
+      'esim-installation-tuto.esim-installation-tuto',
+      false
+    >;
     label_add_to_cart_btn: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
