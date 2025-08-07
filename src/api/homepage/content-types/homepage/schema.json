@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -36,30 +36,55 @@
       "displayName": "products higlight",
       "type": "component",
       "repeatable": false,
-      "component": "products-higlight.products-higlight"
+      "component": "products-higlight.products-higlight",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "esim_compatibility": {
       "displayName": "Esim Compatibility",
       "type": "component",
       "repeatable": false,
-      "component": "esim-compatibility.esim-compatibility"
+      "component": "esim-compatibility.esim-compatibility",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "about": {
       "displayName": "About",
       "type": "component",
       "repeatable": false,
-      "component": "about.about"
+      "component": "about.about",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "faq": {
       "displayName": "FAQ",
       "type": "component",
       "repeatable": false,
-      "component": "faq.faq"
+      "component": "faq.faq",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "image_text": {
       "type": "component",
       "repeatable": true,
-      "component": "image-text.image-text"
+      "component": "image-text.image-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "header_image": {
       "type": "media",

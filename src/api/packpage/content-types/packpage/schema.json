@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -17,7 +17,12 @@
   },
   "attributes": {
     "title_country": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "label_btn_single_country": {
       "type": "string",
@@ -28,16 +33,36 @@
       }
     },
     "label_btn_multi_country": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "label_vat": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "label_limited_duration": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "label_subscription_duration": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "label_add_to_cart_btn": {
       "type": "string",
@@ -48,37 +73,72 @@
       }
     },
     "label_check_compatibility_btn": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "title_text": {
       "displayName": "pack_infos",
       "type": "component",
       "repeatable": true,
-      "component": "pack-info.pack-infos"
+      "component": "pack-info.pack-infos",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "esim_installation_tuto": {
       "displayName": "esim_installation_tuto",
       "type": "component",
       "repeatable": false,
-      "component": "esim-installation-tuto.esim-installation-tuto"
+      "component": "esim-installation-tuto.esim-installation-tuto",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "about": {
       "type": "component",
       "repeatable": false,
-      "component": "about.about"
+      "component": "about.about",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "esim_compatibility": {
       "type": "component",
       "repeatable": false,
-      "component": "esim-compatibility.esim-compatibility"
+      "component": "esim-compatibility.esim-compatibility",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "faq": {
       "type": "component",
       "repeatable": false,
-      "component": "faq.faq"
+      "component": "faq.faq",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "label_add_to_cart": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

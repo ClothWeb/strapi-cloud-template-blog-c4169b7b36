@@ -412,24 +412,53 @@ export interface ApiContactpageContactpage extends Struct.SingleTypeSchema {
     singularName: 'contactpage';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    formular: Schema.Attribute.Component<'formular.formular', true>;
-    label_submit_btn: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    formular: Schema.Attribute.Component<'formular.formular', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_submit_btn: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contactpage.contactpage'
-    > &
-      Schema.Attribute.Private;
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    sub_title: Schema.Attribute.String;
-    text: Schema.Attribute.RichText;
-    title: Schema.Attribute.String;
+    sub_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -703,7 +732,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     singularName: 'homepage';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -711,19 +740,39 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    about: Schema.Attribute.Component<'about.about', false>;
+    about: Schema.Attribute.Component<'about.about', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     countries_higlight: Schema.Attribute.Component<
       'products-higlight.products-higlight',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     esim_compatibility: Schema.Attribute.Component<
       'esim-compatibility.esim-compatibility',
       false
-    >;
-    faq: Schema.Attribute.Component<'faq.faq', false>;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    faq: Schema.Attribute.Component<'faq.faq', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     header_image: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     > &
@@ -744,7 +793,12 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    image_text: Schema.Attribute.Component<'image-text.image-text', true>;
+    image_text: Schema.Attribute.Component<'image-text.image-text', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -810,7 +864,7 @@ export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
     singularName: 'packpage';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -818,45 +872,105 @@ export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    about: Schema.Attribute.Component<'about.about', false>;
+    about: Schema.Attribute.Component<'about.about', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     esim_compatibility: Schema.Attribute.Component<
       'esim-compatibility.esim-compatibility',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     esim_installation_tuto: Schema.Attribute.Component<
       'esim-installation-tuto.esim-installation-tuto',
       false
-    >;
-    faq: Schema.Attribute.Component<'faq.faq', false>;
-    label_add_to_cart: Schema.Attribute.String;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    faq: Schema.Attribute.Component<'faq.faq', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_add_to_cart: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     label_add_to_cart_btn: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    label_btn_multi_country: Schema.Attribute.String;
+    label_btn_multi_country: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     label_btn_single_country: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    label_check_compatibility_btn: Schema.Attribute.String;
-    label_limited_duration: Schema.Attribute.String;
-    label_subscription_duration: Schema.Attribute.String;
-    label_vat: Schema.Attribute.String;
+    label_check_compatibility_btn: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_limited_duration: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_subscription_duration: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_vat: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::packpage.packpage'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    title_country: Schema.Attribute.String;
-    title_text: Schema.Attribute.Component<'pack-info.pack-infos', true>;
+    title_country: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title_text: Schema.Attribute.Component<'pack-info.pack-infos', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -872,7 +986,7 @@ export interface ApiPackspagePackspage extends Struct.SingleTypeSchema {
     singularName: 'packspage';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   pluginOptions: {
     i18n: {
@@ -883,11 +997,21 @@ export interface ApiPackspagePackspage extends Struct.SingleTypeSchema {
     countries_higlight: Schema.Attribute.Component<
       'products-higlight.products-higlight',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    faq: Schema.Attribute.Component<'faq.faq', false>;
+    faq: Schema.Attribute.Component<'faq.faq', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

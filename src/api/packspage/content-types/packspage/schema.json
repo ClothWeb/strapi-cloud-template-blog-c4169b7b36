@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {
     "i18n": {
@@ -19,12 +19,22 @@
     "countries_higlight": {
       "type": "component",
       "repeatable": false,
-      "component": "products-higlight.products-higlight"
+      "component": "products-higlight.products-higlight",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "faq": {
       "type": "component",
       "repeatable": false,
-      "component": "faq.faq"
+      "component": "faq.faq",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
