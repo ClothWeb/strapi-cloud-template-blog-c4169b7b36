@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_formular_formulars",
+  "info": {
+    "displayName": "formular"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "group": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "select",
+        "hidden",
+        "password",
+        "email",
+        "checkbox"
+      ]
+    },
+    "group_target": {
+      "type": "string"
+    }
+  }
+}

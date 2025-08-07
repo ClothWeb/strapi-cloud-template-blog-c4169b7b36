@@ -403,6 +403,39 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactpageContactpage extends Struct.SingleTypeSchema {
+  collectionName: 'contactpages';
+  info: {
+    description: '';
+    displayName: 'Contactpage';
+    pluralName: 'contactpages';
+    singularName: 'contactpage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    formular: Schema.Attribute.Component<'formular.formular', true>;
+    label_submit_btn: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contactpage.contactpage'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sub_title: Schema.Attribute.String;
+    text: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContinentContinent extends Struct.CollectionTypeSchema {
   collectionName: 'continents';
   info: {
@@ -1439,6 +1472,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::code.code': ApiCodeCode;
+      'api::contactpage.contactpage': ApiContactpageContactpage;
       'api::continent.continent': ApiContinentContinent;
       'api::country.country': ApiCountryCountry;
       'api::device.device': ApiDeviceDevice;

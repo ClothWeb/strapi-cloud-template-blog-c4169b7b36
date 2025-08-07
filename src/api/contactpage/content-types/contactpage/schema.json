@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "contactpages",
+  "info": {
+    "singularName": "contactpage",
+    "pluralName": "contactpages",
+    "displayName": "Contactpage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "formular": {
+      "displayName": "formular",
+      "type": "component",
+      "repeatable": true,
+      "component": "formular.formular"
+    },
+    "label_submit_btn": {
+      "type": "string"
+    }
+  }
+}
