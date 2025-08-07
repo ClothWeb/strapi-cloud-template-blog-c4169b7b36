@@ -20,10 +20,7 @@ export interface EsimCompatibilityEsimCompatibility
     displayName: 'Esim Compatibility';
   };
   attributes: {
-    image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     placeholder_search: Schema.Attribute.String;
     sub_title: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -92,10 +89,7 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
     displayName: 'Image / Text';
   };
   attributes: {
-    image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     sub_title: Schema.Attribute.String;
     text: Schema.Attribute.Blocks;
     title: Schema.Attribute.String;
