@@ -785,7 +785,7 @@ export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
-    about: Schema.Attribute.Component<'about.about', true>;
+    about: Schema.Attribute.Component<'about.about', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
