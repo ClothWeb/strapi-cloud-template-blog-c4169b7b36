@@ -768,6 +768,43 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPackspagePackspage extends Struct.SingleTypeSchema {
+  collectionName: 'packspages';
+  info: {
+    description: '';
+    displayName: 'Packspage';
+    pluralName: 'packspages';
+    singularName: 'packspage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    countries_higlight: Schema.Attribute.Component<
+      'products-higlight.products-higlight',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'faq.faq', false>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::packspage.packspage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1347,6 +1384,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::order.order': ApiOrderOrder;
+      'api::packspage.packspage': ApiPackspagePackspage;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

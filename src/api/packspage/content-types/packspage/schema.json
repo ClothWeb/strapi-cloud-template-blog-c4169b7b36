@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "packspages",
+  "info": {
+    "singularName": "packspage",
+    "pluralName": "packspages",
+    "displayName": "Packspage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "countries_higlight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "products-higlight.products-higlight"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "faq.faq"
+    }
+  }
+}
