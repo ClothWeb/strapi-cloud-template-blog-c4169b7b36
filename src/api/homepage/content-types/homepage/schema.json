@@ -1,0 +1,69 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "header_title": {
+      "type": "string"
+    },
+    "header_sub_title": {
+      "type": "string"
+    },
+    "header_search_placeholder": {
+      "type": "string"
+    },
+    "header_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "countries_higlight": {
+      "displayName": "countries_higlight",
+      "type": "component",
+      "repeatable": false,
+      "component": "countries-higlight.countries-higlight"
+    },
+    "about": {
+      "displayName": "about",
+      "type": "component",
+      "repeatable": false,
+      "component": "about.about"
+    },
+    "esim_compatibility": {
+      "displayName": "esim_compatibility",
+      "type": "component",
+      "repeatable": false,
+      "component": "esim-compatibility.esim-compatibility"
+    },
+    "faq": {
+      "displayName": "faq",
+      "type": "component",
+      "repeatable": false,
+      "component": "faq.faq"
+    },
+    "image_text": {
+      "type": "component",
+      "repeatable": true,
+      "component": "image-text.image-text"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_title_text_title_texts",
+  "info": {
+    "displayName": "title_text"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "packspages",
+  "info": {
+    "singularName": "packspage",
+    "pluralName": "packspages",
+    "displayName": "Packspage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "countries_higlight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "countries-higlight.countries-higlight"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "faq.faq"
+    }
+  }
+}

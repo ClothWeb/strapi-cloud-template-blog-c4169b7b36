@@ -1,0 +1,68 @@
+{
+  "kind": "singleType",
+  "collectionName": "packpages",
+  "info": {
+    "singularName": "packpage",
+    "pluralName": "packpages",
+    "displayName": "Packpage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title_country": {
+      "type": "string"
+    },
+    "label_btn_single_country": {
+      "type": "string"
+    },
+    "label_btn_multi_country": {
+      "type": "string"
+    },
+    "label_vat": {
+      "type": "string"
+    },
+    "label_limited_duration": {
+      "type": "string"
+    },
+    "label_subscription_duration": {
+      "type": "string"
+    },
+    "label_add_to_cart_btn": {
+      "type": "string"
+    },
+    "label_check_compatibility_btn": {
+      "type": "string"
+    },
+    "title_text": {
+      "displayName": "title_text",
+      "type": "component",
+      "repeatable": true,
+      "component": "title-text.title-text"
+    },
+    "esim_installation_tuto": {
+      "displayName": "esim_installation_tuto",
+      "type": "component",
+      "repeatable": false,
+      "component": "esim-installation-tuto.esim-installation-tuto"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "about.about"
+    },
+    "esim_compatibility": {
+      "type": "component",
+      "repeatable": false,
+      "component": "esim-compatibility.esim-compatibility"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "faq.faq"
+    },
+    "label_add_to_cart_succeed": {
+      "type": "string"
+    }
+  }
+}

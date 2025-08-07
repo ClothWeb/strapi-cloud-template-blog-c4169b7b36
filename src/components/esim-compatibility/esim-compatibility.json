@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_esim_compatibility_esim_compatibilities",
+  "info": {
+    "displayName": "esim_compatibility"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "placeholder_search": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

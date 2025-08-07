@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_countries_higlight_countries_higlights",
+  "info": {
+    "displayName": "countries_higlight"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "label_btn_packs": {
+      "type": "string"
+    },
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
+    }
+  }
+}

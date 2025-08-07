@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_abouts",
+  "info": {
+    "displayName": "about"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "image_text": {
+      "displayName": "image_text",
+      "type": "component",
+      "repeatable": true,
+      "component": "image-text.image-text"
+    }
+  }
+}
