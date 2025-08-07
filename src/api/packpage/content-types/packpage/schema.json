@@ -76,6 +76,9 @@
       "type": "component",
       "repeatable": false,
       "component": "faq.faq"
+    },
+    "label_add_to_cart": {
+      "type": "string"
     }
   }
 }

@@ -798,6 +798,7 @@ export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
       false
     >;
     faq: Schema.Attribute.Component<'faq.faq', false>;
+    label_add_to_cart: Schema.Attribute.String;
     label_add_to_cart_btn: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
