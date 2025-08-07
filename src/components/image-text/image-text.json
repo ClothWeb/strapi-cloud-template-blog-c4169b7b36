@@ -24,7 +24,7 @@
       ]
     },
     "text": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }

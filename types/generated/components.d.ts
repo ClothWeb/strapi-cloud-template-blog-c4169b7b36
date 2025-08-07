@@ -91,7 +91,7 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     sub_title: Schema.Attribute.String;
-    text: Schema.Attribute.Blocks;
+    text: Schema.Attribute.RichText;
     title: Schema.Attribute.String;
   };
 }
