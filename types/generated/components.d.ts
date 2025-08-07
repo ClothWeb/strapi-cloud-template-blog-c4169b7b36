@@ -12,6 +12,14 @@ export interface AboutAbout extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutAboutPack extends Struct.ComponentSchema {
+  collectionName: 'components_about_about_packs';
+  info: {
+    displayName: 'about_pack';
+  };
+  attributes: {};
+}
+
 export interface EsimCompatibilityEsimCompatibility
   extends Struct.ComponentSchema {
   collectionName: 'components_esim_compatibility_esim_compatibilities';
@@ -102,6 +110,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.about': AboutAbout;
+      'about.about-pack': AboutAboutPack;
       'esim-compatibility.esim-compatibility': EsimCompatibilityEsimCompatibility;
       'esim-installation-tuto.esim-installation-tuto': EsimInstallationTutoEsimInstallationTuto;
       'faq.faq': FaqFaq;

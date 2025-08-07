@@ -785,13 +785,19 @@ export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
     };
   };
   attributes: {
+    about: Schema.Attribute.Component<'about.about', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    esim_compatibility: Schema.Attribute.Component<
+      'esim-compatibility.esim-compatibility',
+      false
+    >;
     esim_installation_tuto: Schema.Attribute.Component<
       'esim-installation-tuto.esim-installation-tuto',
       false
     >;
+    faq: Schema.Attribute.Component<'faq.faq', false>;
     label_add_to_cart_btn: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

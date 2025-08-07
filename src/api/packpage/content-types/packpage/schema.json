@@ -61,6 +61,21 @@
       "type": "component",
       "repeatable": false,
       "component": "esim-installation-tuto.esim-installation-tuto"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.about"
+    },
+    "esim_compatibility": {
+      "type": "component",
+      "repeatable": false,
+      "component": "esim-compatibility.esim-compatibility"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "faq.faq"
     }
   }
 }
