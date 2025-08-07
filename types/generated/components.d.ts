@@ -59,6 +59,17 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
   };
 }
 
+export interface PackInfoPackInfos extends Struct.ComponentSchema {
+  collectionName: 'components_pack_info_pack_infos';
+  info: {
+    displayName: 'pack_infos';
+  };
+  attributes: {
+    text: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ProductsHiglightProductsHiglight
   extends Struct.ComponentSchema {
   collectionName: 'components_products_higlight_products_higlights';
@@ -82,6 +93,7 @@ declare module '@strapi/strapi' {
       'esim-compatibility.esim-compatibility': EsimCompatibilityEsimCompatibility;
       'faq.faq': FaqFaq;
       'image-text.image-text': ImageTextImageText;
+      'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
     }
   }

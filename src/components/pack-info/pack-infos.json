@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_pack_info_pack_infos",
+  "info": {
+    "displayName": "pack_infos"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

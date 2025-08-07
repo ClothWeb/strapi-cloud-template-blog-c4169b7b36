@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "packpages",
+  "info": {
+    "singularName": "packpage",
+    "pluralName": "packpages",
+    "displayName": "Packpage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title_country": {
+      "type": "string"
+    },
+    "label_btn_single_country": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "label_btn_multi_country": {
+      "type": "string"
+    },
+    "label_vat": {
+      "type": "string"
+    },
+    "label_limited_duration": {
+      "type": "string"
+    },
+    "label_subscription_duration": {
+      "type": "string"
+    },
+    "label_add_to_cart_btn": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "label_check_compatibility_btn": {
+      "type": "string"
+    },
+    "title_text": {
+      "displayName": "pack_infos",
+      "type": "component",
+      "repeatable": true,
+      "component": "pack-info.pack-infos"
+    }
+  }
+}

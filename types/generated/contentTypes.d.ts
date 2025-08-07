@@ -768,6 +768,56 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
+  collectionName: 'packpages';
+  info: {
+    displayName: 'Packpage';
+    pluralName: 'packpages';
+    singularName: 'packpage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    label_add_to_cart_btn: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_btn_multi_country: Schema.Attribute.String;
+    label_btn_single_country: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_check_compatibility_btn: Schema.Attribute.String;
+    label_limited_duration: Schema.Attribute.String;
+    label_subscription_duration: Schema.Attribute.String;
+    label_vat: Schema.Attribute.String;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::packpage.packpage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title_country: Schema.Attribute.String;
+    title_text: Schema.Attribute.Component<'pack-info.pack-infos', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPackspagePackspage extends Struct.SingleTypeSchema {
   collectionName: 'packspages';
   info: {
@@ -1384,6 +1434,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::order.order': ApiOrderOrder;
+      'api::packpage.packpage': ApiPackpagePackpage;
       'api::packspage.packspage': ApiPackspagePackspage;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;
