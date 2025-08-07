@@ -17,6 +17,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::country.country"
+    },
+    "btn_label": {
+      "type": "string"
     }
   }
 }

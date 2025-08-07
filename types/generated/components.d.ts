@@ -68,6 +68,7 @@ export interface ProductsHiglightProductsHiglight
     icon: '';
   };
   attributes: {
+    btn_label: Schema.Attribute.String;
     countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
     sub_title: Schema.Attribute.String;
     title: Schema.Attribute.String;
