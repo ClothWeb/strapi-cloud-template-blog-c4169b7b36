@@ -1,10 +1,10 @@
 {
-  "kind": "singleType",
-  "collectionName": "faqpages",
+  "kind": "collectionType",
+  "collectionName": "faq_categories",
   "info": {
-    "singularName": "faqpage",
-    "pluralName": "faqpages",
-    "displayName": "Faqpage",
+    "singularName": "faq-categorie",
+    "pluralName": "faq-categories",
+    "displayName": "FAQ Categorie",
     "description": ""
   },
   "options": {
@@ -16,19 +16,13 @@
     }
   },
   "attributes": {
-    "title": {
+    "name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
-    },
-    "sub_title": {
-      "type": "string"
-    },
-    "text": {
-      "type": "richtext"
     }
   }
 }

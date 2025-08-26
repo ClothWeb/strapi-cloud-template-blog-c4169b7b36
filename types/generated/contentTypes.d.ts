@@ -656,6 +656,45 @@ export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFaqCategorieFaqCategorie
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'faq_categories';
+  info: {
+    description: '';
+    displayName: 'FAQ Categorie';
+    pluralName: 'faq-categories';
+    singularName: 'faq-categorie';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-categorie.faq-categorie'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -726,6 +765,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
 export interface ApiFaqpageFaqpage extends Struct.SingleTypeSchema {
   collectionName: 'faqpages';
   info: {
+    description: '';
     displayName: 'Faqpage';
     pluralName: 'faqpages';
     singularName: 'faqpage';
@@ -748,6 +788,8 @@ export interface ApiFaqpageFaqpage extends Struct.SingleTypeSchema {
       'api::faqpage.faqpage'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    sub_title: Schema.Attribute.String;
+    text: Schema.Attribute.RichText;
     title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1638,6 +1680,7 @@ declare module '@strapi/strapi' {
       'api::country.country': ApiCountryCountry;
       'api::device.device': ApiDeviceDevice;
       'api::esim.esim': ApiEsimEsim;
+      'api::faq-categorie.faq-categorie': ApiFaqCategorieFaqCategorie;
       'api::faq.faq': ApiFaqFaq;
       'api::faqpage.faqpage': ApiFaqpageFaqpage;
       'api::homepage.homepage': ApiHomepageHomepage;
