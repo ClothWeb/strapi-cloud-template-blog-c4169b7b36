@@ -677,6 +677,7 @@ export interface ApiFaqCategorieFaqCategorie
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq: Schema.Attribute.Relation<'manyToOne', 'api::faq.faq'>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -712,30 +713,6 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    categories: Schema.Attribute.Enumeration<
-      [
-        'eSIM & Kompatibilit\u00E4t',
-        'Daten & Nutzung',
-        'Zahlung & W\u00E4hrung ',
-        'Aktivierung & Netzabdeckung ',
-        'Zus\u00E4tzliche FAQ ',
-        'Kauf & Lieferung',
-        'Technik & Einstellungen ',
-        'Reise & Nutzung im Ausland ',
-        'Support & Sicherheit ',
-        'Weitere Sonderfragen',
-        'Benutzerkonto & Verwaltung',
-        'Storno & R\u00FCckerstattung',
-        'Verbindungsqualit\u00E4t & Geschwindigkeit ',
-        'Nachhaltigkeit',
-        'Reiseplanung & Flexibilit\u00E4t ',
-      ]
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     content: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -745,9 +722,12 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-categorie.faq-categorie'
+    >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
-    location: Schema.Attribute.Enumeration<['home', 'pack']>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &

@@ -25,38 +25,6 @@
       },
       "required": true
     },
-    "location": {
-      "type": "enumeration",
-      "enum": [
-        "home",
-        "pack"
-      ]
-    },
-    "categories": {
-      "type": "enumeration",
-      "enum": [
-        "eSIM & Kompatibilität",
-        "Daten & Nutzung",
-        "Zahlung & Währung ",
-        "Aktivierung & Netzabdeckung ",
-        "Zusätzliche FAQ ",
-        "Kauf & Lieferung",
-        "Technik & Einstellungen ",
-        "Reise & Nutzung im Ausland ",
-        "Support & Sicherheit ",
-        "Weitere Sonderfragen",
-        "Benutzerkonto & Verwaltung",
-        "Storno & Rückerstattung",
-        "Verbindungsqualität & Geschwindigkeit ",
-        "Nachhaltigkeit",
-        "Reiseplanung & Flexibilität "
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "content": {
       "type": "richtext",
       "pluginOptions": {
@@ -64,6 +32,12 @@
           "localized": true
         }
       }
+    },
+    "faq_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-categorie.faq-categorie",
+      "mappedBy": "faq"
     }
   }
 }
