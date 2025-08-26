@@ -723,6 +723,43 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFaqpageFaqpage extends Struct.SingleTypeSchema {
+  collectionName: 'faqpages';
+  info: {
+    displayName: 'Faqpage';
+    pluralName: 'faqpages';
+    singularName: 'faqpage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faqpage.faqpage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -1602,6 +1639,7 @@ declare module '@strapi/strapi' {
       'api::device.device': ApiDeviceDevice;
       'api::esim.esim': ApiEsimEsim;
       'api::faq.faq': ApiFaqFaq;
+      'api::faqpage.faqpage': ApiFaqpageFaqpage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::order.order': ApiOrderOrder;
       'api::packpage.packpage': ApiPackpagePackpage;

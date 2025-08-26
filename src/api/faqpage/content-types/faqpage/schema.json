@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "faqpages",
+  "info": {
+    "singularName": "faqpage",
+    "pluralName": "faqpages",
+    "displayName": "Faqpage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
