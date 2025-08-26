@@ -403,6 +403,49 @@ export interface ApiCodeCode extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactpageContactpage extends Struct.SingleTypeSchema {
+  collectionName: 'contactpages';
+  info: {
+    displayName: 'Contactpage';
+    pluralName: 'contactpages';
+    singularName: 'contactpage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contactpage.contactpage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sub_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContinentContinent extends Struct.CollectionTypeSchema {
   collectionName: 'continents';
   info: {
@@ -758,44 +801,119 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
 export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
   collectionName: 'packpages';
   info: {
+    description: '';
     displayName: 'Packpage';
     pluralName: 'packpages';
     singularName: 'packpage';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
-    about: Schema.Attribute.Component<'about.about', false>;
+    about: Schema.Attribute.Component<'about.about', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     esim_compatibility: Schema.Attribute.Component<
       'esim-compatibility.esim-compatibility',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     esim_installation_tuto: Schema.Attribute.Component<
       'esim-installation-tuto.esim-installation-tuto',
       false
-    >;
-    faq: Schema.Attribute.Component<'faq.faq', false>;
-    label_add_to_cart_btn: Schema.Attribute.String;
-    label_add_to_cart_succeed: Schema.Attribute.String;
-    label_btn_multi_country: Schema.Attribute.String;
-    label_btn_single_country: Schema.Attribute.String;
-    label_check_compatibility_btn: Schema.Attribute.String;
-    label_limited_duration: Schema.Attribute.String;
-    label_subscription_duration: Schema.Attribute.String;
-    label_vat: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    faq: Schema.Attribute.Component<'faq.faq', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_add_to_cart_btn: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_add_to_cart_succeed: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_btn_multi_country: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_btn_single_country: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_check_compatibility_btn: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_limited_duration: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_subscription_duration: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_vat: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::packpage.packpage'
-    > &
-      Schema.Attribute.Private;
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    title_country: Schema.Attribute.String;
-    title_text: Schema.Attribute.Component<'title-text.title-text', true>;
+    title_country: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title_text: Schema.Attribute.Component<'title-text.title-text', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -805,28 +923,43 @@ export interface ApiPackpagePackpage extends Struct.SingleTypeSchema {
 export interface ApiPackspagePackspage extends Struct.SingleTypeSchema {
   collectionName: 'packspages';
   info: {
+    description: '';
     displayName: 'Packspage';
     pluralName: 'packspages';
     singularName: 'packspage';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     countries_higlight: Schema.Attribute.Component<
       'countries-higlight.countries-higlight',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    faq: Schema.Attribute.Component<'faq.faq', false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    faq: Schema.Attribute.Component<'faq.faq', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::packspage.packspage'
-    > &
-      Schema.Attribute.Private;
+    >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1406,6 +1539,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::code.code': ApiCodeCode;
+      'api::contactpage.contactpage': ApiContactpageContactpage;
       'api::continent.continent': ApiContinentContinent;
       'api::country.country': ApiCountryCountry;
       'api::device.device': ApiDeviceDevice;

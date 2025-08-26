@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "contactpages",
+  "info": {
+    "singularName": "contactpage",
+    "pluralName": "contactpages",
+    "displayName": "Contactpage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "sub_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

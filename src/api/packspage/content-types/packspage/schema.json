@@ -4,21 +4,37 @@
   "info": {
     "singularName": "packspage",
     "pluralName": "packspages",
-    "displayName": "Packspage"
+    "displayName": "Packspage",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
   },
   "attributes": {
     "countries_higlight": {
       "type": "component",
       "repeatable": false,
-      "component": "countries-higlight.countries-higlight"
+      "component": "countries-higlight.countries-higlight",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "faq": {
       "type": "component",
       "repeatable": false,
-      "component": "faq.faq"
+      "component": "faq.faq",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
