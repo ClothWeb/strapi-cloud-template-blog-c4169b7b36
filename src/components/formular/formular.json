@@ -1,7 +1,8 @@
 {
   "collectionName": "components_formular_formulars",
   "info": {
-    "displayName": "formular"
+    "displayName": "formular",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -30,6 +31,15 @@
     },
     "group_target": {
       "type": "string"
+    },
+    "options": {
+      "type": "json"
+    },
+    "select_options": {
+      "displayName": "select-options",
+      "type": "component",
+      "repeatable": true,
+      "component": "select-options.select-options"
     }
   }
 }

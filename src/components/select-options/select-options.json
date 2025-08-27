@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_select_options_select_options",
+  "info": {
+    "displayName": "select-options"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

@@ -54,13 +54,19 @@ export interface FaqFaq extends Struct.ComponentSchema {
 export interface FormularFormular extends Struct.ComponentSchema {
   collectionName: 'components_formular_formulars';
   info: {
+    description: '';
     displayName: 'formular';
   };
   attributes: {
     group: Schema.Attribute.String;
     group_target: Schema.Attribute.String;
     label: Schema.Attribute.String;
+    options: Schema.Attribute.JSON;
     required: Schema.Attribute.Boolean;
+    select_options: Schema.Attribute.Component<
+      'select-options.select-options',
+      true
+    >;
     slug: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
       ['text', 'select', 'hidden', 'password', 'email', 'checkbox']
@@ -109,6 +115,17 @@ export interface ProductsHiglightProductsHiglight
   };
 }
 
+export interface SelectOptionsSelectOptions extends Struct.ComponentSchema {
+  collectionName: 'components_select_options_select_options';
+  info: {
+    displayName: 'select-options';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    slug: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -120,6 +137,7 @@ declare module '@strapi/strapi' {
       'image-text.image-text': ImageTextImageText;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
+      'select-options.select-options': SelectOptionsSelectOptions;
     }
   }
 }
