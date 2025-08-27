@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "faqpages",
+  "info": {
+    "singularName": "faqpage",
+    "pluralName": "faqpages",
+    "displayName": "Faqpage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "sub_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "text": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "faq_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-category.faq-category"
+    }
+  }
+}
