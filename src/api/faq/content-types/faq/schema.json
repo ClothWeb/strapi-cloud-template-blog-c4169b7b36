@@ -33,10 +33,11 @@
         }
       }
     },
-    "faq_categories": {
+    "faq_category": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::faq-category.faq-category"
+      "relation": "manyToOne",
+      "target": "api::faq-category.faq-category",
+      "inversedBy": "faqs"
     }
   }
 }

@@ -23,6 +23,12 @@
           "localized": true
         }
       }
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq",
+      "mappedBy": "faq_category"
     }
   }
 }

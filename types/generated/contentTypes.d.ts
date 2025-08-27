@@ -676,6 +676,7 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -720,8 +721,8 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    faq_categories: Schema.Attribute.Relation<
-      'oneToMany',
+    faq_category: Schema.Attribute.Relation<
+      'manyToOne',
       'api::faq-category.faq-category'
     >;
     locale: Schema.Attribute.String;
