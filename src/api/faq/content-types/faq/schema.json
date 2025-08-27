@@ -36,7 +36,7 @@
     "faq_categories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::faq-categorie.faq-categorie",
+      "target": "api::faq-category.faq-category",
       "mappedBy": "faq"
     }
   }

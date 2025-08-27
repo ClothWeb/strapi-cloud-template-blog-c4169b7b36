@@ -2,27 +2,16 @@
   "kind": "collectionType",
   "collectionName": "faq_categories",
   "info": {
-    "singularName": "faq-categorie",
+    "singularName": "faq-category",
     "pluralName": "faq-categories",
-    "displayName": "FAQ Categorie",
-    "description": ""
+    "displayName": "Faq Category"
   },
   "options": {
-    "draftAndPublish": false
-  },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
+    "draftAndPublish": true
   },
   "attributes": {
     "name": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "type": "string"
     },
     "faq": {
       "type": "relation",

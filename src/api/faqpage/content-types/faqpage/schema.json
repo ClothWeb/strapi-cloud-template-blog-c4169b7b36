@@ -29,6 +29,11 @@
     },
     "text": {
       "type": "richtext"
+    },
+    "faq_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-category.faq-category"
     }
   }
 }

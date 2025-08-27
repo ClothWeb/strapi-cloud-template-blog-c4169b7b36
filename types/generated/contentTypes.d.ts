@@ -656,39 +656,28 @@ export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiFaqCategorieFaqCategorie
-  extends Struct.CollectionTypeSchema {
+export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
   collectionName: 'faq_categories';
   info: {
-    description: '';
-    displayName: 'FAQ Categorie';
+    displayName: 'Faq Category';
     pluralName: 'faq-categories';
-    singularName: 'faq-categorie';
+    singularName: 'faq-category';
   };
   options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
+    draftAndPublish: true;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     faq: Schema.Attribute.Relation<'manyToOne', 'api::faq.faq'>;
-    locale: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::faq-categorie.faq-categorie'
-    >;
-    name: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+      'api::faq-category.faq-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -724,7 +713,7 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     faq_categories: Schema.Attribute.Relation<
       'oneToMany',
-      'api::faq-categorie.faq-categorie'
+      'api::faq-category.faq-category'
     >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
@@ -762,6 +751,10 @@ export interface ApiFaqpageFaqpage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faq_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-category.faq-category'
+    >;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1660,7 +1653,7 @@ declare module '@strapi/strapi' {
       'api::country.country': ApiCountryCountry;
       'api::device.device': ApiDeviceDevice;
       'api::esim.esim': ApiEsimEsim;
-      'api::faq-categorie.faq-categorie': ApiFaqCategorieFaqCategorie;
+      'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq.faq': ApiFaqFaq;
       'api::faqpage.faqpage': ApiFaqpageFaqpage;
       'api::homepage.homepage': ApiHomepageHomepage;
