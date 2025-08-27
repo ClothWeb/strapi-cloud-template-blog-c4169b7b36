@@ -659,25 +659,35 @@ export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
 export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
   collectionName: 'faq_categories';
   info: {
+    description: '';
     displayName: 'Faq Category';
     pluralName: 'faq-categories';
     singularName: 'faq-category';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     faq: Schema.Attribute.Relation<'manyToOne', 'api::faq.faq'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::faq-category.faq-category'
-    > &
-      Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
