@@ -68,20 +68,6 @@ export interface FormularFormular extends Struct.ComponentSchema {
   };
 }
 
-export interface FormularFromular extends Struct.ComponentSchema {
-  collectionName: 'components_formular_fromulars';
-  info: {
-    displayName: 'fromular';
-  };
-  attributes: {
-    label: Schema.Attribute.String;
-    required: Schema.Attribute.Boolean;
-    type: Schema.Attribute.Enumeration<
-      ['checkbox', 'text', 'hidden', 'select', 'textarea']
-    >;
-  };
-}
-
 export interface ImageTextImageText extends Struct.ComponentSchema {
   collectionName: 'components_image_text_image_texts';
   info: {
@@ -131,7 +117,6 @@ declare module '@strapi/strapi' {
       'esim-installation-tuto.esim-installation-tuto': EsimInstallationTutoEsimInstallationTuto;
       'faq.faq': FaqFaq;
       'formular.formular': FormularFormular;
-      'formular.fromular': FormularFromular;
       'image-text.image-text': ImageTextImageText;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
