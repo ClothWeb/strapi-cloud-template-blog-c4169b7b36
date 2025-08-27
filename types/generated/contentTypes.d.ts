@@ -660,7 +660,7 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
   collectionName: 'faq_categories';
   info: {
     description: '';
-    displayName: 'Faq Category';
+    displayName: 'FAQ Category';
     pluralName: 'faq-categories';
     singularName: 'faq-category';
   };
@@ -676,7 +676,6 @@ export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    faq: Schema.Attribute.Relation<'manyToOne', 'api::faq.faq'>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
