@@ -4,7 +4,8 @@
   "info": {
     "singularName": "subscribepage",
     "pluralName": "subscribepages",
-    "displayName": "Subscribepage"
+    "displayName": "Subscribepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false

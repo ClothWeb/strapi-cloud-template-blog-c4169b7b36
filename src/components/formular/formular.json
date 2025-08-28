@@ -40,7 +40,11 @@
       "component": "select-options.select-options"
     },
     "select_options_source_collection": {
-      "type": "string"
+      "type": "enumeration",
+      "enum": [
+        "countries"
+      ],
+      "default": "countries"
     }
   }
 }

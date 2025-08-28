@@ -1133,6 +1133,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
 export interface ApiSubscribepageSubscribepage extends Struct.SingleTypeSchema {
   collectionName: 'subscribepages';
   info: {
+    description: '';
     displayName: 'Subscribepage';
     pluralName: 'subscribepages';
     singularName: 'subscribepage';

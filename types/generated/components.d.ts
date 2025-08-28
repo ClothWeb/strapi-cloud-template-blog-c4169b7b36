@@ -67,7 +67,10 @@ export interface FormularFormular extends Struct.ComponentSchema {
       'select-options.select-options',
       true
     >;
-    select_options_source_collection: Schema.Attribute.String;
+    select_options_source_collection: Schema.Attribute.Enumeration<
+      ['countries']
+    > &
+      Schema.Attribute.DefaultTo<'countries'>;
     type: Schema.Attribute.Enumeration<
       ['text', 'select', 'hidden', 'password', 'email', 'checkbox', 'textarea']
     >;
