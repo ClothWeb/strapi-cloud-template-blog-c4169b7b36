@@ -423,12 +423,6 @@ export interface ApiContactpageContactpage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    form: Schema.Attribute.Component<'formular.formular', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     label_submit_btn: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1130,74 +1124,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSubscribepageSubscribepage extends Struct.SingleTypeSchema {
-  collectionName: 'subscribepages';
-  info: {
-    description: '';
-    displayName: 'Subscribepage';
-    pluralName: 'subscribepages';
-    singularName: 'subscribepage';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    form: Schema.Attribute.Component<'formular.formular', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label_submit_btn: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::subscribepage.subscribepage'
-    >;
-    not_register_section: Schema.Attribute.RichText &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    sub_title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    text: Schema.Attribute.RichText &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1739,7 +1665,6 @@ declare module '@strapi/strapi' {
       'api::packpage.packpage': ApiPackpagePackpage;
       'api::packspage.packspage': ApiPackspagePackspage;
       'api::product.product': ApiProductProduct;
-      'api::subscribepage.subscribepage': ApiSubscribepageSubscribepage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

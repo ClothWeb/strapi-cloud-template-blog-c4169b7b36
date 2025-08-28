@@ -51,11 +51,11 @@ export interface FaqFaq extends Struct.ComponentSchema {
   };
 }
 
-export interface FormularFormular extends Struct.ComponentSchema {
-  collectionName: 'components_formular_formulars';
+export interface FormForm extends Struct.ComponentSchema {
+  collectionName: 'components_form_forms';
   info: {
     description: '';
-    displayName: 'form';
+    displayName: 'field';
   };
   attributes: {
     group: Schema.Attribute.String;
@@ -63,17 +63,26 @@ export interface FormularFormular extends Struct.ComponentSchema {
     label: Schema.Attribute.String & Schema.Attribute.Required;
     name_id: Schema.Attribute.String & Schema.Attribute.Required;
     required: Schema.Attribute.Boolean;
-    select_options: Schema.Attribute.Component<
-      'select-options.select-options',
-      true
-    >;
+    select_options: Schema.Attribute.Component<'form.options', true>;
     select_options_source_collection: Schema.Attribute.Enumeration<
       ['countries']
     >;
     type: Schema.Attribute.Enumeration<
-      ['text', 'select', 'hidden', 'password', 'email', 'checkbox', 'textarea']
+      ['text', 'password', 'phone', 'email', 'hidden', 'checkbox', 'textarea']
     > &
       Schema.Attribute.Required;
+  };
+}
+
+export interface FormOptions extends Struct.ComponentSchema {
+  collectionName: 'components_form_options';
+  info: {
+    description: '';
+    displayName: 'options';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
   };
 }
 
@@ -118,18 +127,6 @@ export interface ProductsHiglightProductsHiglight
   };
 }
 
-export interface SelectOptionsSelectOptions extends Struct.ComponentSchema {
-  collectionName: 'components_select_options_select_options';
-  info: {
-    description: '';
-    displayName: 'select-options';
-  };
-  attributes: {
-    label: Schema.Attribute.String;
-    value: Schema.Attribute.String;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -137,11 +134,11 @@ declare module '@strapi/strapi' {
       'esim-compatibility.esim-compatibility': EsimCompatibilityEsimCompatibility;
       'esim-installation-tuto.esim-installation-tuto': EsimInstallationTutoEsimInstallationTuto;
       'faq.faq': FaqFaq;
-      'formular.formular': FormularFormular;
+      'form.form': FormForm;
+      'form.options': FormOptions;
       'image-text.image-text': ImageTextImageText;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
-      'select-options.select-options': SelectOptionsSelectOptions;
     }
   }
 }

@@ -40,17 +40,6 @@
         }
       }
     },
-    "form": {
-      "displayName": "formular",
-      "type": "component",
-      "repeatable": true,
-      "component": "formular.formular",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "label_submit_btn": {
       "type": "string",
       "pluginOptions": {

@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_formular_formulars",
+  "collectionName": "components_form_forms",
   "info": {
-    "displayName": "form",
+    "displayName": "field",
     "description": ""
   },
   "options": {},
@@ -14,39 +14,38 @@
       "type": "string",
       "required": true
     },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "password",
+        "phone",
+        "email",
+        "hidden",
+        "checkbox",
+        "textarea"
+      ],
+      "required": true
+    },
     "required": {
       "type": "boolean"
     },
     "group": {
       "type": "string"
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "text",
-        "select",
-        "hidden",
-        "password",
-        "email",
-        "checkbox",
-        "textarea"
-      ],
-      "required": true
-    },
     "group_target": {
       "type": "string"
-    },
-    "select_options": {
-      "displayName": "select-options",
-      "type": "component",
-      "repeatable": true,
-      "component": "select-options.select-options"
     },
     "select_options_source_collection": {
       "type": "enumeration",
       "enum": [
         "countries"
       ]
+    },
+    "select_options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.options"
     }
   }
 }
