@@ -61,13 +61,12 @@ export interface FormularFormular extends Struct.ComponentSchema {
     group: Schema.Attribute.String;
     group_target: Schema.Attribute.String;
     label: Schema.Attribute.String;
-    options: Schema.Attribute.JSON;
+    name_id: Schema.Attribute.String;
     required: Schema.Attribute.Boolean;
     select_options: Schema.Attribute.Component<
       'select-options.select-options',
       true
     >;
-    slug: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<
       ['text', 'select', 'hidden', 'password', 'email', 'checkbox']
     >;
@@ -118,11 +117,12 @@ export interface ProductsHiglightProductsHiglight
 export interface SelectOptionsSelectOptions extends Struct.ComponentSchema {
   collectionName: 'components_select_options_select_options';
   info: {
+    description: '';
     displayName: 'select-options';
   };
   attributes: {
     label: Schema.Attribute.String;
-    slug: Schema.Attribute.String;
+    value: Schema.Attribute.String;
   };
 }
 

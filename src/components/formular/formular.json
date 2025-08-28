@@ -9,7 +9,7 @@
     "label": {
       "type": "string"
     },
-    "slug": {
+    "name_id": {
       "type": "string"
     },
     "required": {
@@ -31,9 +31,6 @@
     },
     "group_target": {
       "type": "string"
-    },
-    "options": {
-      "type": "json"
     },
     "select_options": {
       "displayName": "select-options",
