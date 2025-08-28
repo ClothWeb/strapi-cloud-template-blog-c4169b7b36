@@ -43,8 +43,7 @@
       "type": "enumeration",
       "enum": [
         "countries"
-      ],
-      "default": "countries"
+      ]
     }
   }
 }
