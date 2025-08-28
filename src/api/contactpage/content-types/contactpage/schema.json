@@ -40,7 +40,7 @@
         }
       }
     },
-    "formular": {
+    "form": {
       "displayName": "formular",
       "type": "component",
       "repeatable": true,

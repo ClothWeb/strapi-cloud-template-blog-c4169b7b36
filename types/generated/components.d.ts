@@ -55,7 +55,7 @@ export interface FormularFormular extends Struct.ComponentSchema {
   collectionName: 'components_formular_formulars';
   info: {
     description: '';
-    displayName: 'formular';
+    displayName: 'form';
   };
   attributes: {
     group: Schema.Attribute.String;
