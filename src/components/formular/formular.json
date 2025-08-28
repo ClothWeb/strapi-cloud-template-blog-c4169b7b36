@@ -26,7 +26,8 @@
         "hidden",
         "password",
         "email",
-        "checkbox"
+        "checkbox",
+        "textarea"
       ]
     },
     "group_target": {

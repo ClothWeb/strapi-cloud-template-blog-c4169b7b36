@@ -68,7 +68,7 @@ export interface FormularFormular extends Struct.ComponentSchema {
       true
     >;
     type: Schema.Attribute.Enumeration<
-      ['text', 'select', 'hidden', 'password', 'email', 'checkbox']
+      ['text', 'select', 'hidden', 'password', 'email', 'checkbox', 'textarea']
     >;
   };
 }
