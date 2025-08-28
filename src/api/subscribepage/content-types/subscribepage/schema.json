@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "subscribepages",
+  "info": {
+    "singularName": "subscribepage",
+    "pluralName": "subscribepages",
+    "displayName": "Subscribepage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "sub_title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "form": {
+      "type": "component",
+      "repeatable": true,
+      "component": "formular.formular"
+    },
+    "label_submit_btn": {
+      "type": "string"
+    },
+    "not_register_section": {
+      "type": "richtext"
+    }
+  }
+}
