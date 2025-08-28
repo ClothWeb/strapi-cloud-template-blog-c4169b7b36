@@ -60,8 +60,8 @@ export interface FormularFormular extends Struct.ComponentSchema {
   attributes: {
     group: Schema.Attribute.String;
     group_target: Schema.Attribute.String;
-    label: Schema.Attribute.String;
-    name_id: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    name_id: Schema.Attribute.String & Schema.Attribute.Required;
     required: Schema.Attribute.Boolean;
     select_options: Schema.Attribute.Component<
       'select-options.select-options',
@@ -72,7 +72,8 @@ export interface FormularFormular extends Struct.ComponentSchema {
     >;
     type: Schema.Attribute.Enumeration<
       ['text', 'select', 'hidden', 'password', 'email', 'checkbox', 'textarea']
-    >;
+    > &
+      Schema.Attribute.Required;
   };
 }
 

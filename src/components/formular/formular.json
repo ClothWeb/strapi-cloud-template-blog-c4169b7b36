@@ -7,10 +7,12 @@
   "options": {},
   "attributes": {
     "label": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "name_id": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "required": {
       "type": "boolean"
@@ -28,7 +30,8 @@
         "email",
         "checkbox",
         "textarea"
-      ]
+      ],
+      "required": true
     },
     "group_target": {
       "type": "string"

@@ -1150,14 +1150,29 @@ export interface ApiSubscribepageSubscribepage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    form: Schema.Attribute.Component<'formular.formular', true>;
-    label_submit_btn: Schema.Attribute.String;
+    form: Schema.Attribute.Component<'formular.formular', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    label_submit_btn: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::subscribepage.subscribepage'
     >;
-    not_register_section: Schema.Attribute.RichText;
+    not_register_section: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     sub_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1165,7 +1180,12 @@ export interface ApiSubscribepageSubscribepage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    text: Schema.Attribute.RichText;
+    text: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
