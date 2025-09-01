@@ -9,7 +9,7 @@
     "title": {
       "type": "string"
     },
-    "itens": {
+    "items": {
       "displayName": "menu_itens",
       "type": "component",
       "repeatable": true,
