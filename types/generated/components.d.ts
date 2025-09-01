@@ -117,7 +117,7 @@ export interface MenuMenu extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'menu.menu-itens', true>;
-    location: Schema.Attribute.Enumeration<['header', 'footer']>;
+    menu_position: Schema.Attribute.Enumeration<['header', 'footer']>;
     relation: Schema.Attribute.Component<'menu.relation', true>;
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String;

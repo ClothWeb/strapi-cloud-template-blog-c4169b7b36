@@ -15,7 +15,7 @@
       "repeatable": true,
       "component": "menu.menu-itens"
     },
-    "location": {
+    "menu_position": {
       "type": "enumeration",
       "enum": [
         "header",
