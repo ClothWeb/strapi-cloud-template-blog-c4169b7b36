@@ -125,7 +125,8 @@ export interface MenuMenu extends Struct.ComponentSchema {
 export interface MenuMenuItens extends Struct.ComponentSchema {
   collectionName: 'components_menu_menu_itens';
   info: {
-    displayName: 'menu_itens';
+    description: '';
+    displayName: 'menu_items';
   };
   attributes: {
     label: Schema.Attribute.String;

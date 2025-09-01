@@ -1,7 +1,8 @@
 {
   "collectionName": "components_menu_menu_itens",
   "info": {
-    "displayName": "menu_itens"
+    "displayName": "menu_items",
+    "description": ""
   },
   "options": {},
   "attributes": {
