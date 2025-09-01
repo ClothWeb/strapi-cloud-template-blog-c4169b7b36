@@ -21,6 +21,12 @@
         "header",
         "footer"
       ]
+    },
+    "relation": {
+      "displayName": "relation",
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.relation"
     }
   }
 }

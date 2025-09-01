@@ -118,6 +118,7 @@ export interface MenuMenu extends Struct.ComponentSchema {
   attributes: {
     items: Schema.Attribute.Component<'menu.menu-itens', true>;
     location: Schema.Attribute.Enumeration<['header', 'footer']>;
+    relation: Schema.Attribute.Component<'menu.relation', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -131,6 +132,28 @@ export interface MenuMenuItens extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String;
     slug: Schema.Attribute.String;
+  };
+}
+
+export interface MenuMenuRelation extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menu_relations';
+  info: {
+    displayName: 'menu_relation';
+  };
+  attributes: {};
+}
+
+export interface MenuRelation extends Struct.ComponentSchema {
+  collectionName: 'components_menu_relations';
+  info: {
+    displayName: 'relation';
+  };
+  attributes: {
+    countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
+    faq_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-category.faq-category'
+    >;
   };
 }
 
@@ -173,6 +196,8 @@ declare module '@strapi/strapi' {
       'image-text.image-text': ImageTextImageText;
       'menu.menu': MenuMenu;
       'menu.menu-itens': MenuMenuItens;
+      'menu.menu-relation': MenuMenuRelation;
+      'menu.relation': MenuRelation;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
     }
