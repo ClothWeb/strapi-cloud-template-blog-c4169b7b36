@@ -42,7 +42,7 @@
     },
     "form": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "form.form",
       "pluginOptions": {
         "i18n": {

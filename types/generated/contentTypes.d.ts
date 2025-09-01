@@ -909,7 +909,7 @@ export interface ApiLoginpageLoginpage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    form: Schema.Attribute.Component<'form.form', false> &
+    form: Schema.Attribute.Component<'form.form', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
