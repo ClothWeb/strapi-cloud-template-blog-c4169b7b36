@@ -771,8 +771,18 @@ export interface ApiFaqpageFaqpage extends Struct.SingleTypeSchema {
       'api::faqpage.faqpage'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    sub_title: Schema.Attribute.String;
-    text: Schema.Attribute.RichText;
+    sub_title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1133,6 +1143,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
 export interface ApiSubscribepageSubscribepage extends Struct.SingleTypeSchema {
   collectionName: 'subscribepages';
   info: {
+    description: '';
     displayName: 'Subscribepage';
     pluralName: 'subscribepages';
     singularName: 'subscribepage';
@@ -1166,7 +1177,12 @@ export interface ApiSubscribepageSubscribepage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::subscribepage.subscribepage'
     >;
-    not_register_section: Schema.Attribute.RichText;
+    not_register_section: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     sub_title: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
