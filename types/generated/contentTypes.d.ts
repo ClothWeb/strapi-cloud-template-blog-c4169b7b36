@@ -886,6 +886,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
 export interface ApiLoginpageLoginpage extends Struct.SingleTypeSchema {
   collectionName: 'loginpages';
   info: {
+    description: '';
     displayName: 'Loginpage';
     pluralName: 'loginpages';
     singularName: 'loginpage';
@@ -908,7 +909,12 @@ export interface ApiLoginpageLoginpage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    form: Schema.Attribute.Component<'form.options', false>;
+    form: Schema.Attribute.Component<'form.form', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     label_submit_btn: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

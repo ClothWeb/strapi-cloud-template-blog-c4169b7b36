@@ -4,7 +4,8 @@
   "info": {
     "singularName": "loginpage",
     "pluralName": "loginpages",
-    "displayName": "Loginpage"
+    "displayName": "Loginpage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -42,7 +43,12 @@
     "form": {
       "type": "component",
       "repeatable": false,
-      "component": "form.options"
+      "component": "form.form",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "label_submit_btn": {
       "type": "string",
