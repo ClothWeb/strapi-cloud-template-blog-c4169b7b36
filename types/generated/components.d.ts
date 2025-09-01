@@ -112,10 +112,12 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
 export interface MenuMenu extends Struct.ComponentSchema {
   collectionName: 'components_menu_menus';
   info: {
+    description: '';
     displayName: 'menu';
   };
   attributes: {
-    localisation: Schema.Attribute.Enumeration<['header', 'footer']>;
+    label: Schema.Attribute.String;
+    location: Schema.Attribute.Enumeration<['header', 'footer']>;
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };

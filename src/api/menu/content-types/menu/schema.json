@@ -4,7 +4,8 @@
   "info": {
     "singularName": "menu",
     "pluralName": "menus",
-    "displayName": "Menu"
+    "displayName": "Menu",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -14,12 +15,5 @@
       "localized": true
     }
   },
-  "attributes": {
-    "menu": {
-      "displayName": "menu",
-      "type": "component",
-      "repeatable": true,
-      "component": "menu.menu"
-    }
-  }
+  "attributes": {}
 }

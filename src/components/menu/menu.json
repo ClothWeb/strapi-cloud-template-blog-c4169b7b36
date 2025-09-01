@@ -1,17 +1,21 @@
 {
   "collectionName": "components_menu_menus",
   "info": {
-    "displayName": "menu"
+    "displayName": "menu",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
+    "label": {
+      "type": "string"
+    },
     "slug": {
       "type": "string"
     },
-    "localisation": {
+    "location": {
       "type": "enumeration",
       "enum": [
         "header",
