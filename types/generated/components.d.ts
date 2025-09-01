@@ -68,7 +68,16 @@ export interface FormForm extends Struct.ComponentSchema {
       ['countries']
     >;
     type: Schema.Attribute.Enumeration<
-      ['text', 'password', 'phone', 'email', 'hidden', 'checkbox', 'textarea']
+      [
+        'text',
+        'password',
+        'phone',
+        'email',
+        'hidden',
+        'checkbox',
+        'textarea',
+        'select',
+      ]
     > &
       Schema.Attribute.Required;
   };

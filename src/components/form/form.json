@@ -23,7 +23,8 @@
         "email",
         "hidden",
         "checkbox",
-        "textarea"
+        "textarea",
+        "select"
       ],
       "required": true
     },
