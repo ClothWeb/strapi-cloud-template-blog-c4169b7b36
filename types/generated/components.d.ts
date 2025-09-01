@@ -109,6 +109,18 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
   };
 }
 
+export interface MenuMenu extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menus';
+  info: {
+    displayName: 'menu';
+  };
+  attributes: {
+    localisation: Schema.Attribute.Enumeration<['header', 'footer']>;
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PackInfoPackInfos extends Struct.ComponentSchema {
   collectionName: 'components_pack_info_pack_infos';
   info: {
@@ -146,6 +158,7 @@ declare module '@strapi/strapi' {
       'form.form': FormForm;
       'form.options': FormOptions;
       'image-text.image-text': ImageTextImageText;
+      'menu.menu': MenuMenu;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
     }
