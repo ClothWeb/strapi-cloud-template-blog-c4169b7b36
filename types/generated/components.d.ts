@@ -117,6 +117,7 @@ export interface MenuMenu extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'menu.menu-itens', true>;
+    label: Schema.Attribute.String;
     location: Schema.Attribute.Enumeration<['header', 'footer']>;
     relation: Schema.Attribute.Component<'menu.relation', true>;
     title: Schema.Attribute.String;
@@ -131,6 +132,7 @@ export interface MenuMenuItens extends Struct.ComponentSchema {
   };
   attributes: {
     label: Schema.Attribute.String;
+    picto: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     slug: Schema.Attribute.String;
   };
 }
@@ -146,6 +148,7 @@ export interface MenuMenuRelation extends Struct.ComponentSchema {
 export interface MenuRelation extends Struct.ComponentSchema {
   collectionName: 'components_menu_relations';
   info: {
+    description: '';
     displayName: 'relation';
   };
   attributes: {
@@ -154,6 +157,7 @@ export interface MenuRelation extends Struct.ComponentSchema {
       'oneToMany',
       'api::faq-category.faq-category'
     >;
+    title: Schema.Attribute.String;
   };
 }
 

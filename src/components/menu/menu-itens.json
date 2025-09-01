@@ -11,6 +11,16 @@
     },
     "slug": {
       "type": "string"
+    },
+    "picto": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
