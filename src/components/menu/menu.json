@@ -28,7 +28,7 @@
       "repeatable": true,
       "component": "menu.relation"
     },
-    "label": {
+    "slug": {
       "type": "string"
     }
   }
