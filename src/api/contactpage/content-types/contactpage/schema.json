@@ -51,7 +51,12 @@
     "form": {
       "type": "component",
       "repeatable": true,
-      "component": "form.form"
+      "component": "form.form",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
