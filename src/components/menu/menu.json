@@ -9,11 +9,11 @@
     "title": {
       "type": "string"
     },
-    "label": {
-      "type": "string"
-    },
-    "slug": {
-      "type": "string"
+    "itens": {
+      "displayName": "menu_itens",
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu-itens"
     },
     "location": {
       "type": "enumeration",

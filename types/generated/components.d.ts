@@ -116,10 +116,20 @@ export interface MenuMenu extends Struct.ComponentSchema {
     displayName: 'menu';
   };
   attributes: {
-    label: Schema.Attribute.String;
+    itens: Schema.Attribute.Component<'menu.menu-itens', true>;
     location: Schema.Attribute.Enumeration<['header', 'footer']>;
-    slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface MenuMenuItens extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menu_itens';
+  info: {
+    displayName: 'menu_itens';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    slug: Schema.Attribute.String;
   };
 }
 
@@ -161,6 +171,7 @@ declare module '@strapi/strapi' {
       'form.options': FormOptions;
       'image-text.image-text': ImageTextImageText;
       'menu.menu': MenuMenu;
+      'menu.menu-itens': MenuMenuItens;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
     }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_menu_menu_itens",
+  "info": {
+    "displayName": "menu_itens"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
