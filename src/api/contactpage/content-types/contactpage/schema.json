@@ -47,6 +47,11 @@
           "localized": true
         }
       }
+    },
+    "form": {
+      "type": "component",
+      "repeatable": true,
+      "component": "form.form"
     }
   }
 }

@@ -423,6 +423,7 @@ export interface ApiContactpageContactpage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    form: Schema.Attribute.Component<'form.form', true>;
     label_submit_btn: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
