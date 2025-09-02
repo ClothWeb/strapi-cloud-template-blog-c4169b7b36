@@ -1,7 +1,7 @@
 {
   "collectionName": "components_menu_menu_itens",
   "info": {
-    "displayName": "menu_items",
+    "displayName": "menu items",
     "description": ""
   },
   "options": {},
@@ -13,14 +13,15 @@
       "type": "string"
     },
     "picto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

@@ -128,7 +128,7 @@ export interface MenuMenuItens extends Struct.ComponentSchema {
   collectionName: 'components_menu_menu_itens';
   info: {
     description: '';
-    displayName: 'menu_items';
+    displayName: 'menu items';
   };
   attributes: {
     label: Schema.Attribute.String;
@@ -137,19 +137,11 @@ export interface MenuMenuItens extends Struct.ComponentSchema {
   };
 }
 
-export interface MenuMenuRelation extends Struct.ComponentSchema {
-  collectionName: 'components_menu_menu_relations';
-  info: {
-    displayName: 'menu_relation';
-  };
-  attributes: {};
-}
-
 export interface MenuRelation extends Struct.ComponentSchema {
   collectionName: 'components_menu_relations';
   info: {
     description: '';
-    displayName: 'relation';
+    displayName: 'menu relation';
   };
   attributes: {
     countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
@@ -200,7 +192,6 @@ declare module '@strapi/strapi' {
       'image-text.image-text': ImageTextImageText;
       'menu.menu': MenuMenu;
       'menu.menu-itens': MenuMenuItens;
-      'menu.menu-relation': MenuMenuRelation;
       'menu.relation': MenuRelation;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
