@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "termspages",
+  "info": {
+    "singularName": "termspage",
+    "pluralName": "termspages",
+    "displayName": "Termspage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "content": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

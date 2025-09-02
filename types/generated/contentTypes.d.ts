@@ -1361,6 +1361,49 @@ export interface ApiSubscribepageSubscribepage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTermspageTermspage extends Struct.SingleTypeSchema {
+  collectionName: 'termspages';
+  info: {
+    displayName: 'Termspage';
+    pluralName: 'termspages';
+    singularName: 'termspage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::termspage.termspage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1906,6 +1949,7 @@ declare module '@strapi/strapi' {
       'api::privacypage.privacypage': ApiPrivacypagePrivacypage;
       'api::product.product': ApiProductProduct;
       'api::subscribepage.subscribepage': ApiSubscribepageSubscribepage;
+      'api::termspage.termspage': ApiTermspageTermspage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
