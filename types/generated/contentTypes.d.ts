@@ -1205,6 +1205,50 @@ export interface ApiPackspagePackspage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPrivacypagePrivacypage extends Struct.SingleTypeSchema {
+  collectionName: 'privacypages';
+  info: {
+    description: '';
+    displayName: 'Privacypage';
+    pluralName: 'privacypages';
+    singularName: 'privacypage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacypage.privacypage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1859,6 +1903,7 @@ declare module '@strapi/strapi' {
       'api::order.order': ApiOrderOrder;
       'api::packpage.packpage': ApiPackpagePackpage;
       'api::packspage.packspage': ApiPackspagePackspage;
+      'api::privacypage.privacypage': ApiPrivacypagePrivacypage;
       'api::product.product': ApiProductProduct;
       'api::subscribepage.subscribepage': ApiSubscribepageSubscribepage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
