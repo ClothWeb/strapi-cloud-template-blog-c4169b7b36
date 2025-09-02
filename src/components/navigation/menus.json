@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_navigation_menus",
+  "info": {
+    "displayName": "menus",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "menu_items": {
+      "displayName": "menu_items",
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.menu-items"
+    },
+    "relation": {
+      "displayName": "relation",
+      "type": "component",
+      "repeatable": false,
+      "component": "navigation.relation"
+    }
+  }
+}

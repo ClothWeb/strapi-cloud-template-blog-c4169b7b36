@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_navigation_relations",
+  "info": {
+    "displayName": "relation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "countries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::country.country"
+    },
+    "faq_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-category.faq-category"
+    }
+  }
+}

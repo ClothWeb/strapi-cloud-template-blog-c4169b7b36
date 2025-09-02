@@ -15,16 +15,5 @@
       "localized": true
     }
   },
-  "attributes": {
-    "menu": {
-      "type": "component",
-      "repeatable": true,
-      "component": "menu.menu",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    }
-  }
+  "attributes": {}
 }

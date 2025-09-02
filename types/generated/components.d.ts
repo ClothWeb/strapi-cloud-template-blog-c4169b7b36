@@ -112,13 +112,13 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
 export interface MenuMenu extends Struct.ComponentSchema {
   collectionName: 'components_menu_menus';
   info: {
-    description: '';
     displayName: 'menu';
   };
   attributes: {
     items: Schema.Attribute.Component<'menu.menu-itens', true>;
-    menu_position: Schema.Attribute.Enumeration<['header', 'footer']>;
-    relation: Schema.Attribute.Component<'menu.relation', true>;
+    menu_position: Schema.Attribute.Enumeration<['header', 'footer']> &
+      Schema.Attribute.Required;
+    relation: Schema.Attribute.Component<'menu.relation', false>;
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
@@ -150,6 +150,79 @@ export interface MenuRelation extends Struct.ComponentSchema {
       'api::faq-category.faq-category'
     >;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface NavigationMenuItems extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_menu_items';
+  info: {
+    description: '';
+    displayName: 'menu_items';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    picto: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    slug: Schema.Attribute.String;
+  };
+}
+
+export interface NavigationMenus extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_menus';
+  info: {
+    description: '';
+    displayName: 'menus';
+    icon: '';
+  };
+  attributes: {
+    menu_items: Schema.Attribute.Component<'navigation.menu-items', true>;
+    relation: Schema.Attribute.Component<'navigation.relation', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface NavigationNavigation extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_navigations';
+  info: {
+    description: '';
+    displayName: 'navigation';
+  };
+  attributes: {
+    navigation_menu: Schema.Attribute.Component<
+      'navigation.navigation-menu',
+      true
+    >;
+  };
+}
+
+export interface NavigationNavigationMenu extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_navigation_menus';
+  info: {
+    description: '';
+    displayName: 'navigation_menu';
+  };
+  attributes: {
+    menus: Schema.Attribute.Component<'navigation.menus', true>;
+    position: Schema.Attribute.Enumeration<['hearder', 'footer']> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface NavigationRelation extends Struct.ComponentSchema {
+  collectionName: 'components_navigation_relations';
+  info: {
+    description: '';
+    displayName: 'relation';
+  };
+  attributes: {
+    countries: Schema.Attribute.Relation<'oneToMany', 'api::country.country'>;
+    faq_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-category.faq-category'
+    >;
   };
 }
 
@@ -193,6 +266,11 @@ declare module '@strapi/strapi' {
       'menu.menu': MenuMenu;
       'menu.menu-itens': MenuMenuItens;
       'menu.relation': MenuRelation;
+      'navigation.menu-items': NavigationMenuItems;
+      'navigation.menus': NavigationMenus;
+      'navigation.navigation': NavigationNavigation;
+      'navigation.navigation-menu': NavigationNavigationMenu;
+      'navigation.relation': NavigationRelation;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
     }

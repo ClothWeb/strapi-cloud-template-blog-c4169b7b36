@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_navigation_navigation_menus",
+  "info": {
+    "displayName": "navigation_menu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "hearder",
+        "footer"
+      ],
+      "required": true
+    },
+    "menus": {
+      "displayName": "menus",
+      "type": "component",
+      "repeatable": true,
+      "component": "navigation.menus"
+    }
+  }
+}
