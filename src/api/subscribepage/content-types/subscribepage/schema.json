@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "contactpages",
+  "collectionName": "subscribepages",
   "info": {
-    "singularName": "contactpage",
-    "pluralName": "contactpages",
-    "displayName": "Contactpage",
-    "description": ""
+    "singularName": "subscribepage",
+    "pluralName": "subscribepages",
+    "displayName": "Subscribepage"
   },
   "options": {
     "draftAndPublish": false
@@ -41,9 +40,8 @@
       }
     },
     "form": {
-      "displayName": "form",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "form.form",
       "pluginOptions": {
         "i18n": {
@@ -53,6 +51,14 @@
     },
     "label_submit_btn": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "not_register_section": {
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true

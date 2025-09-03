@@ -1,11 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "contactpages",
+  "collectionName": "loginpages",
   "info": {
-    "singularName": "contactpage",
-    "pluralName": "contactpages",
-    "displayName": "Contactpage",
-    "description": ""
+    "singularName": "loginpage",
+    "pluralName": "loginpages",
+    "displayName": "Loginpage"
   },
   "options": {
     "draftAndPublish": false
@@ -40,19 +39,29 @@
         }
       }
     },
-    "form": {
-      "displayName": "form",
+    "from": {
       "type": "component",
-      "repeatable": false,
-      "component": "form.form",
+      "repeatable": true,
+      "component": "form.form"
+    },
+    "label_submit_btn": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "label_submit_btn": {
-      "type": "string",
+    "forget_password_section": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "no_account_section": {
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true

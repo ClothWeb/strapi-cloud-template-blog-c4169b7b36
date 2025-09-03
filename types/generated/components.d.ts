@@ -65,6 +65,69 @@ export interface FaqFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface FormForm extends Struct.ComponentSchema {
+  collectionName: 'components_form_forms';
+  info: {
+    description: '';
+    displayName: 'Fields';
+  };
+  attributes: {
+    group: Schema.Attribute.String;
+    group_target: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    name_id: Schema.Attribute.String & Schema.Attribute.Required;
+    required: Schema.Attribute.Boolean;
+    select_options: Schema.Attribute.Component<'form.options', true>;
+    select_options_source_collection: Schema.Attribute.Enumeration<
+      ['countries']
+    >;
+    type: Schema.Attribute.Enumeration<
+      ['text', 'password', 'email', 'phone', 'textarea', 'checkbox', 'select']
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface FormMenuItems extends Struct.ComponentSchema {
+  collectionName: 'components_form_menu_items';
+  info: {
+    displayName: 'Menu Items';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    picto: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    slug: Schema.Attribute.String;
+  };
+}
+
+export interface FormMenuRelation extends Struct.ComponentSchema {
+  collectionName: 'components_form_menu_relations';
+  info: {
+    displayName: 'Menu Relation';
+  };
+  attributes: {
+    country: Schema.Attribute.Relation<'oneToOne', 'api::country.country'>;
+    faq_categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-category.faq-category'
+    >;
+  };
+}
+
+export interface FormOptions extends Struct.ComponentSchema {
+  collectionName: 'components_form_options';
+  info: {
+    displayName: 'Options';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface ImageTextImageText extends Struct.ComponentSchema {
   collectionName: 'components_image_text_image_texts';
   info: {
@@ -74,6 +137,22 @@ export interface ImageTextImageText extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     sub_title: Schema.Attribute.String;
     text: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface MenuMenu extends Struct.ComponentSchema {
+  collectionName: 'components_menu_menus';
+  info: {
+    description: '';
+    displayName: 'menu';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'form.menu-items', true>;
+    menu_position: Schema.Attribute.Enumeration<['header', 'footer']> &
+      Schema.Attribute.Required;
+    relation: Schema.Attribute.Component<'form.menu-relation', false>;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String;
   };
 }
@@ -97,7 +176,12 @@ declare module '@strapi/strapi' {
       'esim-compatibility.esim-compatibility': EsimCompatibilityEsimCompatibility;
       'esim-installation-tuto.esim-installation-tuto': EsimInstallationTutoEsimInstallationTuto;
       'faq.faq': FaqFaq;
+      'form.form': FormForm;
+      'form.menu-items': FormMenuItems;
+      'form.menu-relation': FormMenuRelation;
+      'form.options': FormOptions;
       'image-text.image-text': ImageTextImageText;
+      'menu.menu': MenuMenu;
       'title-text.title-text': TitleTextTitleText;
     }
   }

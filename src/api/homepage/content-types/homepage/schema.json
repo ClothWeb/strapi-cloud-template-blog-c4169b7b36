@@ -20,10 +20,20 @@
       "type": "string"
     },
     "header_sub_title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "header_search_placeholder": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "header_image": {
       "type": "media",
@@ -34,36 +44,66 @@
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "countries_higlight": {
       "displayName": "countries_higlight",
       "type": "component",
       "repeatable": false,
-      "component": "countries-higlight.countries-higlight"
+      "component": "countries-higlight.countries-higlight",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "about": {
       "displayName": "about",
       "type": "component",
       "repeatable": false,
-      "component": "about.about"
+      "component": "about.about",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "esim_compatibility": {
       "displayName": "esim_compatibility",
       "type": "component",
       "repeatable": false,
-      "component": "esim-compatibility.esim-compatibility"
+      "component": "esim-compatibility.esim-compatibility",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "faq": {
       "displayName": "faq",
       "type": "component",
       "repeatable": false,
-      "component": "faq.faq"
+      "component": "faq.faq",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "image_text": {
       "type": "component",
       "repeatable": true,
-      "component": "image-text.image-text"
+      "component": "image-text.image-text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

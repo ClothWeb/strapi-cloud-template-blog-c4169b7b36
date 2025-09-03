@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_form_forms",
+  "info": {
+    "displayName": "Fields",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "name_id": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "password",
+        "email",
+        "phone",
+        "textarea",
+        "checkbox",
+        "select"
+      ],
+      "required": true
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "group": {
+      "type": "string"
+    },
+    "group_target": {
+      "type": "string"
+    },
+    "select_options": {
+      "displayName": "Options",
+      "type": "component",
+      "repeatable": true,
+      "component": "form.options"
+    },
+    "select_options_source_collection": {
+      "type": "enumeration",
+      "enum": [
+        "countries"
+      ]
+    }
+  }
+}

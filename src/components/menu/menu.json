@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_menu_menus",
+  "info": {
+    "displayName": "menu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "menu_position": {
+      "type": "enumeration",
+      "enum": [
+        "header",
+        "footer"
+      ],
+      "required": true
+    },
+    "items": {
+      "displayName": "Menu Items",
+      "type": "component",
+      "repeatable": true,
+      "component": "form.menu-items"
+    },
+    "relation": {
+      "displayName": "Menu Relation",
+      "type": "component",
+      "repeatable": false,
+      "component": "form.menu-relation"
+    }
+  }
+}

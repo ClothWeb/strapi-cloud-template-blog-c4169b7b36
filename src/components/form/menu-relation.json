@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_form_menu_relations",
+  "info": {
+    "displayName": "Menu Relation"
+  },
+  "options": {},
+  "attributes": {
+    "country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::country.country"
+    },
+    "faq_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq-category.faq-category"
+    }
+  }
+}
