@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_user_profiles",
+  "info": {
+    "displayName": "profile",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "no_esim_attributed_text": {
+      "type": "string"
+    },
+    "esim_attributed_text": {
+      "type": "string"
+    },
+    "esim_attributed_title": {
+      "type": "string"
+    },
+    "esim_attributed_serial_number_label": {
+      "type": "string"
+    },
+    "esim_attributed_qr_code_title": {
+      "type": "string"
+    },
+    "esim_attributed_qr_code_sub_title": {
+      "type": "string"
+    },
+    "esim_attributed_qr_code_setup_text": {
+      "type": "string"
+    },
+    "esim_attributed_qr_code_instructions": {
+      "type": "richtext"
+    },
+    "no_packs_attributed_text": {
+      "type": "string"
+    },
+    "packs_attributed_title": {
+      "type": "string"
+    },
+    "packs_attributed_status_text": {
+      "type": "string"
+    },
+    "packs_attributed_status_active_text": {
+      "type": "string"
+    },
+    "packs_attributed_data_volume_text": {
+      "type": "string"
+    },
+    "packs_attributed_data_no_volume_used_text": {
+      "type": "string"
+    },
+    "packs_attributed_end_text": {
+      "type": "string"
+    }
+  }
+}

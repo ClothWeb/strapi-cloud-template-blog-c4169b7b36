@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_user_settings",
+  "info": {
+    "displayName": "Settings",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "settings_title": {
+      "type": "string"
+    },
+    "setting_name_text": {
+      "type": "string"
+    },
+    "setting_email_text": {
+      "type": "string"
+    },
+    "setting_billing_company_name_text": {
+      "type": "string"
+    },
+    "setting_billing_vat_number_text": {
+      "type": "string"
+    },
+    "setting_billing_address_text": {
+      "type": "string"
+    },
+    "setting_edit_user_btn": {
+      "type": "string"
+    },
+    "setting_edit_user_btn_active": {
+      "type": "string"
+    },
+    "form": {
+      "type": "component",
+      "repeatable": false,
+      "component": "form.form"
+    },
+    "setting_submit_form_btn_text": {
+      "type": "string"
+    }
+  }
+}

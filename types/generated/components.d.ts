@@ -253,6 +253,85 @@ export interface ProductsHiglightProductsHiglight
   };
 }
 
+export interface UserPacks extends Struct.ComponentSchema {
+  collectionName: 'components_user_packs';
+  info: {
+    description: '';
+    displayName: 'Packs';
+  };
+  attributes: {
+    packs_attributed_limited_duration_text: Schema.Attribute.String;
+    packs_attributed_order_data_text: Schema.Attribute.String;
+    packs_attributed_order_date_text: Schema.Attribute.String;
+    packs_attributed_order_day_text: Schema.Attribute.String;
+    packs_attributed_order_number_text: Schema.Attribute.String;
+    packs_attributed_order_status_text: Schema.Attribute.String;
+    packs_attributed_order_validity_text: Schema.Attribute.String;
+    packs_attributed_subscriptiion_duration_text: Schema.Attribute.String;
+    packs_attributed_text: Schema.Attribute.String;
+    packs_not_attributed_text: Schema.Attribute.String;
+  };
+}
+
+export interface UserProfile extends Struct.ComponentSchema {
+  collectionName: 'components_user_profiles';
+  info: {
+    description: '';
+    displayName: 'profile';
+  };
+  attributes: {
+    esim_attributed_qr_code_instructions: Schema.Attribute.RichText;
+    esim_attributed_qr_code_setup_text: Schema.Attribute.String;
+    esim_attributed_qr_code_sub_title: Schema.Attribute.String;
+    esim_attributed_qr_code_title: Schema.Attribute.String;
+    esim_attributed_serial_number_label: Schema.Attribute.String;
+    esim_attributed_text: Schema.Attribute.String;
+    esim_attributed_title: Schema.Attribute.String;
+    no_esim_attributed_text: Schema.Attribute.String;
+    no_packs_attributed_text: Schema.Attribute.String;
+    packs_attributed_data_no_volume_used_text: Schema.Attribute.String;
+    packs_attributed_data_volume_text: Schema.Attribute.String;
+    packs_attributed_end_text: Schema.Attribute.String;
+    packs_attributed_status_active_text: Schema.Attribute.String;
+    packs_attributed_status_text: Schema.Attribute.String;
+    packs_attributed_title: Schema.Attribute.String;
+  };
+}
+
+export interface UserSettings extends Struct.ComponentSchema {
+  collectionName: 'components_user_settings';
+  info: {
+    description: '';
+    displayName: 'Settings';
+  };
+  attributes: {
+    form: Schema.Attribute.Component<'form.form', false>;
+    setting_billing_address_text: Schema.Attribute.String;
+    setting_billing_company_name_text: Schema.Attribute.String;
+    setting_billing_vat_number_text: Schema.Attribute.String;
+    setting_edit_user_btn: Schema.Attribute.String;
+    setting_edit_user_btn_active: Schema.Attribute.String;
+    setting_email_text: Schema.Attribute.String;
+    setting_name_text: Schema.Attribute.String;
+    setting_submit_form_btn_text: Schema.Attribute.String;
+    settings_title: Schema.Attribute.String;
+  };
+}
+
+export interface UserUser extends Struct.ComponentSchema {
+  collectionName: 'components_user_users';
+  info: {
+    description: '';
+    displayName: 'user';
+  };
+  attributes: {
+    menu: Schema.Attribute.Component<'menu.menu', false>;
+    packs: Schema.Attribute.Component<'user.packs', false>;
+    profile: Schema.Attribute.Component<'user.profile', false>;
+    settings: Schema.Attribute.Component<'user.settings', false>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -273,6 +352,10 @@ declare module '@strapi/strapi' {
       'navigation.relation': NavigationRelation;
       'pack-info.pack-infos': PackInfoPackInfos;
       'products-higlight.products-higlight': ProductsHiglightProductsHiglight;
+      'user.packs': UserPacks;
+      'user.profile': UserProfile;
+      'user.settings': UserSettings;
+      'user.user': UserUser;
     }
   }
 }

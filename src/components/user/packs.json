@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_user_packs",
+  "info": {
+    "displayName": "Packs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "packs_not_attributed_text": {
+      "type": "string"
+    },
+    "packs_attributed_text": {
+      "type": "string"
+    },
+    "packs_attributed_order_number_text": {
+      "type": "string"
+    },
+    "packs_attributed_order_date_text": {
+      "type": "string"
+    },
+    "packs_attributed_order_status_text": {
+      "type": "string"
+    },
+    "packs_attributed_order_data_text": {
+      "type": "string"
+    },
+    "packs_attributed_order_validity_text": {
+      "type": "string"
+    },
+    "packs_attributed_order_day_text": {
+      "type": "string"
+    },
+    "packs_attributed_limited_duration_text": {
+      "type": "string"
+    },
+    "packs_attributed_subscriptiion_duration_text": {
+      "type": "string"
+    }
+  }
+}

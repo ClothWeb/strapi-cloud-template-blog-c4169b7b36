@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "userpages",
+  "info": {
+    "singularName": "userpage",
+    "pluralName": "userpages",
+    "displayName": "Userpage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "user": {
+      "displayName": "user",
+      "type": "component",
+      "repeatable": false,
+      "component": "user.user",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

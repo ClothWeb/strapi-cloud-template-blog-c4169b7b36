@@ -1404,6 +1404,44 @@ export interface ApiTermspageTermspage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiUserpageUserpage extends Struct.SingleTypeSchema {
+  collectionName: 'userpages';
+  info: {
+    description: '';
+    displayName: 'Userpage';
+    pluralName: 'userpages';
+    singularName: 'userpage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::userpage.userpage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Component<'user.user', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1950,6 +1988,7 @@ declare module '@strapi/strapi' {
       'api::product.product': ApiProductProduct;
       'api::subscribepage.subscribepage': ApiSubscribepageSubscribepage;
       'api::termspage.termspage': ApiTermspageTermspage;
+      'api::userpage.userpage': ApiUserpageUserpage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
