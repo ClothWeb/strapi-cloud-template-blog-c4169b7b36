@@ -15,24 +15,30 @@
     "setting_email_text": {
       "type": "string"
     },
+    "setting_address_text": {
+      "type": "string"
+    },
+    "setting_billing_title_text": {
+      "type": "string"
+    },
     "setting_billing_company_name_text": {
       "type": "string"
     },
-    "setting_billing_vat_number_text": {
+    "setting_billing_vat_number_btn": {
       "type": "string"
     },
     "setting_billing_address_text": {
       "type": "string"
     },
-    "setting_edit_user_btn": {
+    "setting_edit_information_btn_text": {
       "type": "string"
     },
-    "setting_edit_user_btn_active": {
+    "setting_edit_information_btn_active_text": {
       "type": "string"
     },
     "form": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "form.form"
     },
     "setting_submit_form_btn_text": {

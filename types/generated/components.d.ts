@@ -305,12 +305,14 @@ export interface UserSettings extends Struct.ComponentSchema {
     displayName: 'Settings';
   };
   attributes: {
-    form: Schema.Attribute.Component<'form.form', false>;
+    form: Schema.Attribute.Component<'form.form', true>;
+    setting_address_text: Schema.Attribute.String;
     setting_billing_address_text: Schema.Attribute.String;
     setting_billing_company_name_text: Schema.Attribute.String;
-    setting_billing_vat_number_text: Schema.Attribute.String;
-    setting_edit_user_btn: Schema.Attribute.String;
-    setting_edit_user_btn_active: Schema.Attribute.String;
+    setting_billing_title_text: Schema.Attribute.String;
+    setting_billing_vat_number_btn: Schema.Attribute.String;
+    setting_edit_information_btn_active_text: Schema.Attribute.String;
+    setting_edit_information_btn_text: Schema.Attribute.String;
     setting_email_text: Schema.Attribute.String;
     setting_name_text: Schema.Attribute.String;
     setting_submit_form_btn_text: Schema.Attribute.String;
