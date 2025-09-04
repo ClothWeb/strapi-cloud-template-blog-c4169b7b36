@@ -620,6 +620,67 @@ export interface ApiDeviceDevice extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEmailTemplateEmailTemplate
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'email_templates';
+  info: {
+    description: '';
+    displayName: 'EmailTemplate';
+    pluralName: 'email-templates';
+    singularName: 'email-template';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::email-template.email-template'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    subject: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    type: Schema.Attribute.Enumeration<
+      [
+        'contact_form',
+        'esim_qrcode',
+        'new_order',
+        'payment_succeed_order',
+        'payment_unsucceed_order',
+        'user_reset_password',
+        'user_subscription_confirmation',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEsimEsim extends Struct.CollectionTypeSchema {
   collectionName: 'esims';
   info: {
@@ -1013,6 +1074,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
     number: Schema.Attribute.String;
+    order_lang: Schema.Attribute.String;
     payment_status: Schema.Attribute.Enumeration<
       [
         'pending',
@@ -1974,6 +2036,7 @@ declare module '@strapi/strapi' {
       'api::continent.continent': ApiContinentContinent;
       'api::country.country': ApiCountryCountry;
       'api::device.device': ApiDeviceDevice;
+      'api::email-template.email-template': ApiEmailTemplateEmailTemplate;
       'api::esim.esim': ApiEsimEsim;
       'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq.faq': ApiFaqFaq;
